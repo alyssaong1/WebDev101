@@ -78,15 +78,35 @@ Click on one of the uploaded screens, then just click and drag on the screen to 
 
 - [Balsamiq](http://balsamiq.com) - Free for the first 30 days, then you have to buy a license to save your work. You could screenshot the wireframes you make in Balsamiq to get around this. Otherwise a great wireframing tool with community-created stencils you can add.
 
-- [Moqups](http://moqups.com) - Another HTML5 app for wireframing. The downside with Moqups is that the free version does not allow you to export your wireframes. Again you could get around this by taking screenshots of the wireframes you make in Moqups.  
+- [Moqups](http://moqups.com) - Another HTML5 app for wireframing. The downside with Moqups is that the free version does not allow you to export your wireframes. Again you could get around this by taking screenshots of the wireframes you make in Moqups.
+
+- [Creator Ionic](http://creator.ionic.io)
 
 ## Building out your HTML pages
 
 After creating your digital wireframes, it's good to build it out to see what your designs actually look like when applied to html pages. Here are some tools to help you create your html pages and develop your designs:
 
-### 1. Bootstrap
+### 1. Atom
 
-Bootstrap is a mobile-first front-end framework that will make responsive web development a breeze. Long story short, it'll instantly help make stuff look pretty when you insert elements into your webpage.
+You may be wondering what to use to write all your code in. Well, it all starts with the atom. No literally, it does. [Atom](http://atom.io) is an open source text editor made by the folks at GitHub, and we recommend you use this to create your webpages.
+
+#### Creating a new project
+
+Atom works with folder structure blah blah.
+
+#### Adding packages to Atom
+
+Atom has awesome extensibility blah blah.
+
+#### Other text editors worth mentioning:
+
+- [Sublime Text](http://sublimetext.com) - One of the most popular, easy-to-use text editors out there. The only downside is that you'll have to pay for the full version.
+
+- [Visual Studio Code](http://code.visualstudio.com) - Fun fact: VS Code was built on Atom. 
+
+### 2. Bootstrap
+
+Bootstrap is a mobile-first front-end framework that will make responsive web development a breeze. Long story short, it'll instantly help make stuff look pretty when you insert elements into your webpage, and help you add some really cool functionality to your webpage.
 
 #### Adding Bootstrap to your project
 
@@ -108,6 +128,16 @@ Note that Bootstrap has JavaScript plugins, and as such, jQuery is needed for th
 
 #### Using Bootstrap in your webpages
 
-Luckily, Bootstrap provides great documentation and has lots of community support.
+Luckily, Bootstrap provides great documentation on their webpage and has lots of community support. To see how Bootstrap is applied, let's try making a button to start off.
+
+Insert the following line of code in the body tag of your html file:
+```html
+<button type="button" class="btn btn-primary btn-lg">Large button</button>
+```
+Run your html file in your browser. Your button should look something like this:
+
+- TODO: insert img of large btn
+
+By adding classes, Bootstrap provides us with styles that we can apply to our button - no longer do we have the ugly default html button. For more Bootstrap button customizations, view the documentation [here](http://getbootstrap.com/css/#buttons). Scroll through the documentation to see the customizations you can apply on other elements too.
 
 ### 2. Colour schemes
