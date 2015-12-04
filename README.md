@@ -21,7 +21,7 @@ We will go through the various tools that will help you through Assignment 3. Th
 		- [1. Atom](#1-atom)
 			- [Adding a new or existing project](#adding-a-new-or-existing-project)
 			- [Adding packages to Atom](#adding-packages-to-atom)
-			- [Other text editors worth mentioning:](#other-text-editors-worth-mentioning)
+			- [Other text editors worth mentioning](#other-text-editors-worth-mentioning)
 		- [2. Bootstrap](#2-bootstrap)
 			- [Adding Bootstrap to your project](#adding-bootstrap-to-your-project)
 			- [Using Bootstrap in your webpages](#using-bootstrap-in-your-webpages)
@@ -38,6 +38,8 @@ You will have created paper wireframes in your previous assignment - this is an 
 Pencil Project is an open source wireframing tool that allows you to create wireframes for desktop and mobile apps. It's completely free to use - [download it here](http://pencil.evolus.vn).
 
 In the left pane there are collections of stencils you can use for web and mobile wireframing. There are also  stencils for you to create diagrams. You could also use these to annotate your wireframe with notes. The top pane allows you to customize the stencils you insert.
+
+![pencil-main](img/pencil-main.png)
 
 #### Linking pages
 
@@ -161,7 +163,7 @@ As an example, let's say we want to install a package that allows us to run our 
 
 Hit install and that's it! Now, if you right click any html file in the left pane, you'll see the *Open in browsers* option which lets you run the html file in the browser of your choice. Check out all the packages [here](https://atom.io/packages) and have fun exploring!
 
-#### Other text editors worth mentioning:
+#### Other text editors worth mentioning
 
 - [Sublime Text](http://sublimetext.com) - One of the most popular, easy-to-use text editors out there. The only downside is that you'll have to pay for the full version.
 
