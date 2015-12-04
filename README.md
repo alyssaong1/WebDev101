@@ -16,33 +16,45 @@ In the left pane there are collections of stencils you can use for web and mobil
 
 Pencil allows you to link buttons to other pages to show the interaction and flow in your website. Right click the button you inserted into the canvas, then click on *Link to*. You can then choose which page the user will be navigated to when clicking the button.
 
-- TODO: insert image of linking here
+![pencil-link](img/pencil-link.png)
 
-However, you'll only be able to interact with the wireframes once you've exported it as a html page. To do this, go to *Document > Export Document...* Select the output to be **Single web page**, then hit continue. Select which pages you wish to export, then continue. Click on *Browse...* and choose which folder you want the html page to be saved in, and make sure "Copy links from background pages" is ticked. Hit done, then browse to the folder you saved it in. There should be a newly created html page. If you open the html page in your browser, you should see the wireframes you made all in one page. Try clicking on the buttons in your wireframes and it should navigate to the different webpages like you specified earlier.
+However, you'll only be able to interact with the wireframes once you've exported it as a html page. To do this, go to *Document > Export Document...* Select the output to be **Single web page**, then hit continue.
+
+![pencil-export1](img/pencil-export1.png)
+
+Select which pages you wish to export, then continue. Click on *Browse...* and choose which folder you want the html page to be saved in, and make sure "Copy links from background pages" is ticked. Hit done.
+
+![pencil-export2](img/pencil-export2.png)
+
+Now, browse to the folder you saved it in. There should be a newly created html page. If you open the html page in your browser, you should see the wireframes you made all in one page. Try clicking on the buttons in your wireframes and it should navigate to the different webpages like you specified earlier.
 
 #### Installing extensions
 
 Pencil also allows you to install [additional collections](http://code.google.com/p/evoluspencil/downloads/list?q=label:Stencil) and [additional export templates](http://code.google.com/p/evoluspencil/downloads/list?q=label:Template). First of all, simply download the zip file of the extension you'd like. Let's use the Font Awesome collection as an example.
 
-- TODO: insert font awesome zip dl here
+![fa-zipdl](img/fa-zipdl.png)
 
 If you want to install a collection, go to *Tools > Install new collection...* in Pencil. If you want to install an export template, then go to *Tools > Manage Export Template...* in Pencil.
 
-- TODO: insert image of clicking on tools here
+![pencil-tools](img/pencil-tools.png)
 
-Select the zip file you just downloaded, and Pencil should automatically add in the collection/template.
+Select the zip file you just downloaded, and Pencil should automatically add in the collection/template, like this:
 
-- TODO: insert image of font awesome icons in collection
+![pencil-facollection](img/pencil-facollection.png)
 
 #### Creating your own collections
 
 What if they don't provide the stencil you're looking for? No worries - you can add your own custom stencils in Pencil! Pencil can take an image file and turn it into a stencil that you can use in your wireframes. Let's say I'm making wireframes for a map app, and I wanted to add some stencils, e.g. a map and a location icon. Go to *Tools > Developer Tools > Stencil Generator..*. Drag your image file(s) into the listbox, and enter a name, short description and author for your collection. You can remove the website if you wish. Hit continue.
 
-- TODO: insert image of first page
+![pencil-collgen1](img/pencil-collgen1.png)
 
-Make sure all the images are checked, then hit done. Choose a location to save the zip file - this is the installation file for the collection of stencils you just made. Now, go to *Tools > Install new collection...* and select the zip file that was just generated. Your custom collection should now be added to the pane on the left (collections are ordered alphabetically), and you can now use the stencils you just uploaded.
+Make sure all the images are checked, then hit done.
 
-- TODO: insert image of added collection
+![pencil-collgen2](img/pencil-collgen2.png)
+
+Choose a location to save the zip file - this is the installation file for the collection of stencils you just made. Now, go to *Tools > Install new collection...* and select the zip file that was just generated. Your custom collection should now be added to the pane on the left (collections are ordered alphabetically), and you can now use the stencils you just uploaded.
+
+![pencil-collgen3](img/pencil-collgen3.png)
 
 ### 2. Mockingbird
 
@@ -50,9 +62,13 @@ Mockingbird is a HTML5 app for creating wireframes, meaning that everything is d
 
 On Mockingbird you can create many pages for your webpage wireframes. Start wireframing by dragging and dropping the controls in the left panel into your pages. Some cool features include adding comments on the wireframe and sharing the wireframe with others for collaborative editing.
 
+![mb-home](img/mb-home.png)
+
 #### Linking pages
 
 To link buttons to pages in Mockingbird, you can double click on the button, click on *Link to page* and select a page you want the button to link to. Hit Preview to test the linking out.
+
+![mb-link](img/mb-link.png)
 
 #### Like grids?
 
@@ -66,13 +82,21 @@ Click on the Settings icon in the bottom pane, and hover over *Export*. You can 
 
 If you feel like the linking tools in Pencil weren't good enough, or you have screenshots of wireframes but don't know how to link them, then [Invision](http://invisionapp.com) is your best friend. It's completely free, and it'll turn those screenshots into interactive wireframes (a.k.a. click dummies).
 
-After creating an account, click on the plus (+) sign and give your prototype a name and type. We'll be using Desktop (web) for the purposes of this assignment, but as you can see, you can also use Invision for mobile apps and even watches! Upload the screenshots of your pages separately.
+After creating an account, click on the plus (+) sign and give your prototype a name and type. We'll be using Desktop (web) for the purposes of this assignment, but as you can see, you can also use Invision for mobile apps and even watches!
 
-- TODO: insert image of creating prototype and uploading
+![inv-createproj](img/inv-createproj.png)
 
-Click on one of the uploaded screens, then just click and drag on the screen to create hotspots. These hotspots are basically the areas of interaction in your webpage. After creating a hotspot, you can specify a page it navigates to. Alternatively, you can also specify a certain point on the same screen that the hotspot will jump to when clicked. Hit P to go into preview mode and test those hotspots out!
+You'll need to upload the screenshots of your pages separately. If you need to split a PDF file into separate wireframe pages, [here's a tool you could use](http://smallpdf.com/split-pdf).
 
-- TODO: insert screenshot of created hotspots on page
+![inv-proj](img/inv-proj.png)
+
+Click on one of the uploaded screens, then just click and drag on the screen to create hotspots.
+
+![inv-hotspot](img/inv-hotspot.png)
+
+These hotspots are basically the areas of interaction in your webpage. After creating a hotspot, you can specify a page it navigates to. Alternatively, you can also specify a certain point on the same screen that the hotspot will jump to when clicked. Hit P to go into preview mode and test those hotspots out!
+
+![inv-preview](img/inv-preview.png)
 
 ### Also check out...
 
@@ -98,15 +122,15 @@ To add an existing project, do the same steps, except instead of creating a new 
 
 You should see your folder (with any existing files) in the left hand pane. Click on the various files to view and edit them.
 
+![atom-ide](img/atom-ide.png)
+
 #### Adding packages to Atom
 
 Being open source, Atom has awesome extensibility thanks to the work from other developers. We can easily add packages to Atom should we require additional functionality. To access the Atom settings pane for Macs, go to *Atom > Preferences...*. For Windows,... Click on the "Packages" tab - here you can see all the existing packages you have preinstalled packages that come with Atom. Click on the "Install" tab to start searching for packages online and installing them.
 
-- TODO: insert img with install pane
-
 As an example, let's say we want to install a package that allows us to run our html file in many different browsers straight from Atom. To do this, we could install the [open-in-browsers](https://atom.io/packages/open-in-browsers) package. Open the Atom settings pane, go to the "Install" tab (as described above) and search for "open-in-browsers".
 
-- TODO: insert img with install pane open in browsers
+![atom-install](img/atom-install.png)
 
 Hit install and that's it! Now, if you right click any html file in the left pane, you'll see the *Open in browsers* option which lets you run the html file in the browser of your choice. Check out all the packages [here](https://atom.io/packages) and have fun exploring!
 
@@ -124,7 +148,7 @@ Bootstrap is a mobile-first front-end framework that will make responsive web de
 
 To add Bootstrap to your project, head over to their [homepage](http://getbootstrap.com), click on Download Bootstrap, then click on Download Bootstrap again.
 
-- TODO: insert ss of Download bootstrap
+![bs-dl](img/bs-dl.png)
 
 After unzipping, copy the contents of the bootstrap folder and paste it into the root of your project folder. We then need to reference the relevant scripts within the head tags of our html file, like this:
 
@@ -148,7 +172,7 @@ Insert the following line of code in the body tag of your html file:
 ```
 Run your html file in your browser. Your button should look something like this:
 
-- TODO: insert img of large btn
+![bs-btn](img/bs-btn.png)
 
 By adding classes, Bootstrap provides us with styles that we can apply to our button - no longer do we have the ugly default html button. For more Bootstrap button customizations, view the documentation [here](http://getbootstrap.com/css/#buttons). Scroll through the documentation to see the customizations you can apply on other elements too.
 
@@ -171,7 +195,9 @@ There are thousands of jQuery plugins out there. After you design the functional
 
 As an example, let's try implementing the sweetAlert plugin into our website. Go to the [Sweetalert homepage](http://t4t5.github.io/sweetalert/) and download using "Method 3: Download the sweetAlert CSS and JavaScript files". Unzip the file, and in the folder you should see a bunch of other files. The only files you need are the ones in the **dist** folder. Copy the dist folder, and paste it into the root folder of your project. For clarity, I've renamed dist to sweetalert.
 
-- TODO: insert img showing new folder
+![swal-1](img/swal-1.png)
+
+![swal-2](img/swal-2.png)
 
 Reference the CSS and JavaScript files for sweetAlert in your html file, like this:
 ```html
@@ -184,7 +210,7 @@ When you reference the CSS and JavaScript files, make sure the file paths are co
 ```
 The line above adds an onclick listener to our button, meaning that when the button is clicked, the showalert function will be called. Now let's write the showalert function in JavaScript (our click event handler). To do this, we'll add a new JavaScript file to our project folder. A quick way to do this in atom is to right click the left pane (where you see all the files), then click *New File*. We will call it index.js. You can name it anything you like, so long as it ends with .js to indicate a JavaScript file. Then, reference the newly created JavaScript file in the html file, something like this:
 ```html
-	<script src="index.js"></script>
+<script src="index.js"></script>
 ```
 Again, make sure you use your own file path. For our example, let's use the success message sweetAlert. As shown in the documentation, copy and paste the following lines of code into the newly created JavaScript file.  
 ```javascript
@@ -193,4 +219,3 @@ function confirm(){
 }
 ```
 Here, we've created the confirm function that displays the sweetAlert. Run the html file in a browser, and click on the button. The sweetAlert should pop up. The sweetAlert homepage has documentation that shows tons of other kinds of sweetAlerts you can use - have fun exploring!
-
