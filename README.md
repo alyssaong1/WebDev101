@@ -80,7 +80,7 @@ Click on one of the uploaded screens, then just click and drag on the screen to 
 
 - [Moqups](http://moqups.com) - Another HTML5 app for wireframing. The downside with Moqups is that the free version does not allow you to export your wireframes. Again you could get around this by taking screenshots of the wireframes you make in Moqups.
 
-- [Creator Ionic](http://creator.ionic.io)
+- [Creator Ionic](http://creator.ionic.io) - Very handy tool for creating interactive mobile wireframes!
 
 ## Building out your HTML pages
 
@@ -88,21 +88,33 @@ After creating your digital wireframes, it's good to build it out to see what yo
 
 ### 1. Atom
 
-You may be wondering what to use to write all your code in. Well, it all starts with the atom. No literally, it does. [Atom](http://atom.io) is an open source text editor made by the folks at GitHub, and we recommend you use this to create your webpages.
+You may be wondering what to use to write all your code in. Well, it all starts with the atom. No literally, it does. [Atom](http://atom.io) is an open source text editor made by the folks at GitHub, and we recommend you use this to create your webpages. It's lightweight, powerful and extremely easy to use.
 
-#### Creating a new project
+#### Adding a new or existing project
 
-Atom works with folder structure blah blah.
+To start a new project, go to *File > Open...*. Navigate to where you want your new project to be saved, then create a new folder. This new folder is where all your files for the project will be stored. Select your newly created folder, then hit ok.
+
+To add an existing project, do the same steps, except instead of creating a new folder you can just select your existing project folder.
+
+You should see your folder (with any existing files) in the left hand pane. Click on the various files to view and edit them.
 
 #### Adding packages to Atom
 
-Atom has awesome extensibility blah blah.
+Being open source, Atom has awesome extensibility thanks to the work from other developers. We can easily add packages to Atom should we require additional functionality. To access the Atom settings pane for Macs, go to *Atom > Preferences...*. For Windows,... Click on the "Packages" tab - here you can see all the existing packages you have preinstalled packages that come with Atom. Click on the "Install" tab to start searching for packages online and installing them.
+
+- TODO: insert img with install pane
+
+As an example, let's say we want to install a package that allows us to run our html file in many different browsers straight from Atom. To do this, we could install the [open-in-browsers](https://atom.io/packages/open-in-browsers) package. Open the Atom settings pane, go to the "Install" tab (as described above) and search for "open-in-browsers".
+
+- TODO: insert img with install pane open in browsers
+
+Hit install and that's it! Now, if you right click any html file in the left pane, you'll see the *Open in browsers* option which lets you run the html file in the browser of your choice. Check out all the packages [here](https://atom.io/packages) and have fun exploring!
 
 #### Other text editors worth mentioning:
 
 - [Sublime Text](http://sublimetext.com) - One of the most popular, easy-to-use text editors out there. The only downside is that you'll have to pay for the full version.
 
-- [Visual Studio Code](http://code.visualstudio.com) - Fun fact: VS Code was built on Atom. 
+- [Visual Studio Code](http://code.visualstudio.com) - Fun fact: VS Code was built on Atom.
 
 ### 2. Bootstrap
 
@@ -124,7 +136,7 @@ After unzipping, copy the contents of the bootstrap folder and paste it into the
 </head>
 ```
 
-Note that Bootstrap has JavaScript plugins, and as such, jQuery is needed for these to work. Thus, we need the second line.
+Note that Bootstrap has JavaScript plugins, and as such, jQuery is needed for these to work. Thus, we need the second line. You may also have a different folder structure depending on where you pasted the contents of the bootstrap folder - reference bootstrap.css and bootstrap.js according to your folder structure.
 
 #### Using Bootstrap in your webpages
 
@@ -140,4 +152,45 @@ Run your html file in your browser. Your button should look something like this:
 
 By adding classes, Bootstrap provides us with styles that we can apply to our button - no longer do we have the ugly default html button. For more Bootstrap button customizations, view the documentation [here](http://getbootstrap.com/css/#buttons). Scroll through the documentation to see the customizations you can apply on other elements too.
 
-### 2. Colour schemes
+### 3. Colour schemes
+
+Not sure where to start with picking the colour scheme for your website? Fear not! We've got some tools that will get you started.
+
+### 4. jQuery plugins
+
+jQuery plugins are a quick and powerful way to add more functionality to your website and make them more beautiful. These plugins are written by other developers and are usually open source, meaning you can freely use them in your website. The developers of these plugins usually write pretty good documentation on how to use the plugin in your website.
+
+Check out some cool jQuery plugins:
+- [Sweetalert](http://t4t5.github.io/sweetalert/) - Your alerts will never look boring again with Sweetalert.
+
+- [Tubular](http://www.seanmccambridge.com/tubular/) - Want a youtube video as your background? Check this one out.
+
+- [Tooltipster](http://iamceege.github.io/tooltipster/) - What about some cool looking tooltips?
+
+There are thousands of jQuery plugins out there. After you design the functionality needed for your website, do a search for an existing jQuery plugins you could use to implement those functionalities. Note that some browsers don't work very well with jQuery plugins.
+
+As an example, let's try implementing the sweetAlert plugin into our website. Go to the [Sweetalert homepage](http://t4t5.github.io/sweetalert/) and download using "Method 3: Download the sweetAlert CSS and JavaScript files". Unzip the file, and in the folder you should see a bunch of other files. The only files you need are the ones in the **dist** folder. Copy the dist folder, and paste it into the root folder of your project. For clarity, I've renamed dist to sweetalert.
+
+- TODO: insert img showing new folder
+
+Reference the CSS and JavaScript files for sweetAlert in your html file, like this:
+```html
+<link rel="stylesheet" type="text/css" href="sweetalert/sweetalert.css"/>
+<script src="sweetalert/sweetalert.min.js"></script>
+```
+When you reference the CSS and JavaScript files, make sure the file paths are correct (i.e. where you pasted the sweetAlert files) - it may not be the same as ours. Let's create a button that triggers the sweetAlert when clicked. In your html file, add the following in your body tags:
+```html
+<button type="button" onclick="showalert()">Show me the alert!</button>
+```
+The line above adds an onclick listener to our button, meaning that when the button is clicked, the showalert function will be called. Now let's write the showalert function in JavaScript (our click event handler). To do this, we'll add a new JavaScript file to our project folder. A quick way to do this in atom is to right click the left pane (where you see all the files), then click *New File*. We will call it index.js. You can name it anything you like, so long as it ends with .js to indicate a JavaScript file. Then, reference the newly created JavaScript file in the html file, something like this:
+```html
+	<script src="index.js"></script>
+```
+Again, make sure you use your own file path. For our example, let's use the success message sweetAlert. As shown in the documentation, copy and paste the following lines of code into the newly created JavaScript file.  
+```javascript
+function confirm(){
+  swal("Good job!", "You clicked the button!", "success");
+}
+```
+Here, we've created the confirm function that displays the sweetAlert. Run the html file in a browser, and click on the button. The sweetAlert should pop up. The sweetAlert homepage has documentation that shows tons of other kinds of sweetAlerts you can use - have fun exploring!
+
