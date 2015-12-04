@@ -2,6 +2,35 @@
 
 We will go through the various tools that will help you through Assignment 3. These tools act as a guideline - you need not follow it exactly, but it is what we recommend you use as best practice for your assignment.
 
+## Table of contents
+
+<!-- TOC depth:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Compsci 345 A3 Documentation](#compsci-345-a3-documentation)
+	- [Table of contents](#table-of-contents)
+	- [Digital Wireframing](#digital-wireframing)
+		- [1. Pencil Project (recommended!)](#1-pencil-project-recommended)
+			- [Linking pages](#linking-pages)
+			- [Installing extensions](#installing-extensions)
+			- [Creating your own collections](#creating-your-own-collections)
+		- [2. Mockingbird](#2-mockingbird)
+			- [Linking pages](#linking-pages)
+			- [Like grids?](#like-grids)
+			- [Exporting your wireframes](#exporting-your-wireframes)
+		- [3. Invision](#3-invision)
+		- [Also check out...](#also-check-out)
+	- [Building out your HTML pages](#building-out-your-html-pages)
+		- [1. Atom](#1-atom)
+			- [Adding a new or existing project](#adding-a-new-or-existing-project)
+			- [Adding packages to Atom](#adding-packages-to-atom)
+			- [Other text editors worth mentioning:](#other-text-editors-worth-mentioning)
+		- [2. Bootstrap](#2-bootstrap)
+			- [Adding Bootstrap to your project](#adding-bootstrap-to-your-project)
+			- [Using Bootstrap in your webpages](#using-bootstrap-in-your-webpages)
+		- [3. Colour schemes](#3-colour-schemes)
+		- [4. jQuery plugins](#4-jquery-plugins)
+<!-- /TOC -->
+
 ## Digital Wireframing
 
 You will have created paper wireframes in your previous assignment - this is an example of low fidelity wireframing. Digital wireframing is considered to be of higher fidelity, which will help you further solidify the form and function of your website in the design process. Here are a list of some tools you can use:
