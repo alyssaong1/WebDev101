@@ -4,8 +4,6 @@ We will go through the various tools that will help you through Assignment 3. Th
 
 ## Table of contents
 
-<!-- TOC depth:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
 - [Compsci 345 A3 Documentation](#compsci-345-a3-documentation)
 	- [Table of contents](#table-of-contents)
 	- [Digital Wireframing](#digital-wireframing)
@@ -29,7 +27,7 @@ We will go through the various tools that will help you through Assignment 3. Th
 			- [Using Bootstrap in your webpages](#using-bootstrap-in-your-webpages)
 		- [3. Colour schemes](#3-colour-schemes)
 		- [4. jQuery plugins](#4-jquery-plugins)
-<!-- /TOC -->
+
 
 ## Digital Wireframing
 
