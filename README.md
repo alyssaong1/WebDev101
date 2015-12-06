@@ -25,6 +25,7 @@ We will go through the various tools that will help you through Assignment 3. Th
 		- [2. Bootstrap](#2-bootstrap)
 			- [Adding Bootstrap to your project](#adding-bootstrap-to-your-project)
 			- [Using Bootstrap in your webpages](#using-bootstrap-in-your-webpages)
+			- [Customizing Bootstrap styles](#customizing-bootstrap-styles)
 		- [3. Colour schemes](#3-colour-schemes)
 		- [4. jQuery plugins](#4-jquery-plugins)
 
@@ -197,13 +198,48 @@ Luckily, Bootstrap provides great documentation on their webpage and has lots of
 
 Insert the following line of code in the body tag of your html file:
 ```html
-<button type="button" class="btn btn-primary btn-lg">Large button</button>
+<button type="button" class="btn btn-lg">Large button</button>
 ```
 Run your html file in your browser. Your button should look something like this:
 
 ![bs-btn](img/bs-btn.png)
 
 By adding classes, Bootstrap provides us with styles that we can apply to our button - no longer do we have the ugly default html button. For more Bootstrap button customizations, view the documentation [here](http://getbootstrap.com/css/#buttons). Scroll through the documentation to see the customizations you can apply on other elements too.
+
+#### Customizing Bootstrap styles
+It's highly likely that you'd want to use your own colour scheme, borders and fonts for your website elements. The good news is, we can customize Bootstrap's styles by overriding the CSS classes with our own styles. As an example, let's try customizing the colour and border of the large button we made.
+
+First of all, let's make a CSS file called "custom.css". This is where all the customization for the Bootstrap styles will go. To customize the button, we need to figure out which part of the CSS needs to be changed. If you right click the large button (in your browser) and click "Inspect Element", a pane appears that lets you see the styles that are being applied to the selected element. You can modify CSS in the pane itself to see your styles being applied in real time. [Here](https://www.youtube.com/watch?v=3zSUIm1KrPs) is a video showing you how you can do this.
+
+Let's try making the background of the button a different colour in the Inspect Element CSS pane. As you can see, the colour is coming from the background-color attribute of the .btn-primary class. We can either change the background-color attribute in the .btn-primary style directly, or we can add a background-color attribute to the .btn-lg class and override the default style by Bootstrap.
+
+![inspectel](img/inspectel.png)
+
+You should be able to see the colour of your button changing on the spot as you modify the background-color attribute in the inspector. Now that we've identified the classes that affect the colour of the button, we need to override these in our custom.css file.
+
+Go back to your code, and copy and paste the following snippet into the custom.css file:
+```css
+.btn-lg{
+  background-color: #5C2D91;
+	color: #FFFFFF;
+}
+```
+In this snippet of code we made the background color of the button purple, and the button font white. Run the html file in the browser and you should see that the button now looks like this:
+
+![bs-modified-btn](img/bs-modified-btn.png)
+
+But what if you only wanted to change the colour for one particular button without affecting the styles of all other large buttons you add into your website in future? To do this, you can attach an id to the button in the html file, then modify the background colour by selecting the id from the css. So your html code for the button would look like this:
+```html
+		<button type="button" class="btn btn-lg" id="myPurpleBtn">Large btn</button>
+```
+And your css for that particular button would look like this:
+```css
+#myPurpleBtn{
+  background-color: #5C2D91;
+  color: #fff;
+}
+```
+The styling is now unique to that button.
 
 ### 3. Colour schemes
 
