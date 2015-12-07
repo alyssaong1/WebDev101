@@ -172,7 +172,7 @@ Hit install and that's it! Now, if you right click any html file in the left pan
 
 ### 2. Bootstrap
 
-Bootstrap is a mobile-first front-end framework that will make responsive web development a breeze. Long story short, it'll instantly help make stuff look pretty when you insert elements into your webpage, and help you add some really cool functionality to your webpage.
+Bootstrap is a mobile-first front-end framework that will make responsive web development a breeze. Long story short, it'll instantly help make stuff look pretty when you insert elements into your webpage, and help you add some really cool functionality to your webpage. You won't be allowed to use templates though.
 
 #### Adding Bootstrap to your project
 
@@ -230,7 +230,7 @@ In this snippet of code we made the background color of the button purple, and t
 
 But what if you only wanted to change the colour for one particular button without affecting the styles of all other large buttons you add into your website in future? To do this, you can attach an id to the button in the html file, then modify the background colour by selecting the id from the css. So your html code for the button would look like this:
 ```html
-		<button type="button" class="btn btn-lg" id="myPurpleBtn">Large btn</button>
+<button type="button" class="btn btn-lg" id="myPurpleBtn">Large btn</button>
 ```
 And your css for that particular button would look like this:
 ```css
@@ -243,9 +243,46 @@ The styling is now unique to that button.
 
 ### 3. Colour schemes
 
-Not sure where to start with picking the colour scheme for your website? Fear not! We've got some tools that will get you started.
+Every website should have a colour scheme. Picking the colour scheme can be a bit of a challenge, but fortunately we've got some tools that will get you started.
 
-### 4. jQuery plugins
+#### Adobe Color CC
+
+[Try it out!](https://color.adobe.com) Adobe Color CC allows you to pick your colour scheme based on colour rules, like analogous, monochromatic and complementary. After you select a colour rule, try dragging the circles on the colour wheel around - the colour palette automatically readjusts itself according to the colour rule you selected.
+
+#### Paletton
+
+[Try it out!](http://paletton.com) Paletton also lets you pick your colour scheme based on colour rules, but with more customization and control available. Hover over the various colours and shades in the square palette to view their hex codes.
+
+- TODO: insert annotated image of how to use paletton
+
+### 4. Storing data
+
+It is extremely common for websites to take in user input and store it, and chances are you'll want to do this for your website too. To bypass all the complications of setting up a backend to store our data, we recommend you use client side storage called **localStorage**. With localStorage, websites can store data locally in the user's browser. More outdated browser versions may not support localStorage - [check this link out](http://www.w3schools.com/html/html5_webstorage.asp) to see if your browser version supports it.
+
+You may be thinking - what if I close my browser, or clear my history or clear my cache? Does this mean all the data in localStorage will be wiped out? The answer is **no**, your data will still exist in localStorage if you close your browser window, and our data will be stored with no expiration date. So the data will still be there a day, week, month and even a year later.
+
+#### How to use localStorage
+
+Using localStorage is easy. Everything is done using the **localStorage** object in JavaScript. localStorage stores data in name/value pairs. For instance:
+```javascript
+localStorage.setItem('favouriteflavour', 'vanilla');
+```
+has the name 'favouriteflavour', with the value 'vanilla'. If we want to retrieve this data from localStorage, we would need to call the getItem method, like this:
+```javascript
+var myfavouriteflavour = localStorage.getItem('favouriteflavour');
+```
+The variable myfavouriteflavour would be 'vanilla'.
+
+- TODO: add link that explains json
+One limitation with localStorage is that you can only store strings. The problem with this is that we usually want to store many attributes for an object, e.g. a "user" object would have a name, date of birth, email address, etc. To address this, we can use JSON to represent our objects. If you are unsure of what JSON is, [read this](http://www.w3schools.com/json/json_syntax.asp). What if we want to store JSON objects?
+
+#### Storing JSON objects in localStorage
+
+The trick is to turn our JSON objects into strings, then store it in localStorage.
+
+If we need to retrieve the JSON objects from storage, we retrieve the string, then convert it back into JSON format.
+
+### 5. jQuery plugins
 
 jQuery plugins are a quick and powerful way to add more functionality to your website and make them more beautiful. These plugins are written by other developers and are usually open source, meaning you can freely use them in your website. The developers of these plugins usually write pretty good documentation on how to use the plugin in your website.
 
