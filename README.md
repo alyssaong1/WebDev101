@@ -309,12 +309,26 @@ form.onsubmit = function (e){
 		name: document.getElementById("name").value,
 		feedback: document.getElementById("feedback").value
 	}
+	// Show the newFeedback object in the console
+	console.log(newFeedback);
 	// Clear all form fields
 	form.reset();
 };
 ```
+Run the html file in your browser, then go *right click > Inspect Element*. When you write values into the form and submit it, you should see the newFeedback object being printed in your console. Expand the object and you can see the values you input into the form being saved into the newFeedback object.
 
 #### Form input validation
+
+Form validation is basically making sure the user enters healthy inputs before submitting the form. For instance, making sure an entered name is at least 4 characters in length, or preventing the user from submitting blank feedback. We can add attributes to input elements for form validation. For instance, one would use the `required` attribute to denote that the input value cannot be left as blank, and the `minlength` attribute to denote that the input value must have a  minimum number of characters. Let's apply some validation to our existing form by making the following changes to your code:
+```html
+<!-- Change the line with the name input to this -->
+<input type="name" minlength="4" class="form-control" id="name" required>
+```
+```html
+<!-- Change the line with the feedback input to this -->
+<textarea class="form-control" rows="5" id="feedback" required></textarea>
+```
+We've made it so that both name and feedback inputs must be filled out before the form is successfully submitted, and the name input has to have a minimum length of 4 characters. Run the html file in the browser, then try violating some of the validation rules during submission e.g. leaving both inputs blank and clicking the submit button. You can see that you won't be able to submit the form, and the form tells you what you need to do to fulfill the validation requirements. To find out more input attributes you can add, check [this link](http://www.w3schools.com/html/html_form_attributes.asp) out.
 
 ### 5. Storing data
 
@@ -324,7 +338,7 @@ You may be thinking - what if I close my browser, or clear my history or clear m
 
 #### How to use localStorage
 
-Using localStorage is easy. Everything is done by calling methods on the **localStorage** object in JavaScript. localStorage stores data in name/value pairs. For instance:
+Using localStorage is easy. Everything is done by calling methods on the `localStorage` object in JavaScript. localStorage stores data in name/value pairs. For instance:
 ```javascript
 localStorage.setItem('favouriteflavour', 'vanilla');
 ```
@@ -384,7 +398,7 @@ var usersString = localStorage.getItem('users');
 // Convert string to JSON format
 var users = JSON.parse(usersString);
 ```
-Think of it as saving user records to a user table in a database. It's pretty much  **localStorage.setItem('yourTableName', JSON.stringify(yourTableData));**.
+Think of it as saving user records to a user table in a database. It's pretty much  `localStorage.setItem('yourTableName', JSON.stringify(yourTableData));`.
 
 ### 6. jQuery plugins
 
