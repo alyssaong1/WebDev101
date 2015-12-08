@@ -255,7 +255,57 @@ Every website should have a colour scheme. Picking the colour scheme can be a bi
 
 - TODO: insert annotated image of how to use paletton
 
-### 4. Storing data
+### 4. Working with forms
+
+It is extremely common for websites to take in user input, such as filling in a feedback form, registering for an online account, or logging in. We generally use forms for this. Forms contain a whole bunch of controls that collect user input with a submit button at the end - you can read more about forms [here](http://www.w3schools.com/html/html_forms.asp). Let's use a feedback form as an example. We will first create a feedback form in html, then retrieve user input with  JavaScript upon clicking the submit button.
+
+#### Form appearance
+
+Bootstrap provides styling for forms, which we will use. For more detail on Bootstrap forms, check out [this link](http://www.w3schools.com/bootstrap/bootstrap_forms.asp). The next 3 chapters have more info on Bootstrap form inputs which are very handy when you try to customize your form. Go into your index.html page and copy paste the following lines of code in the <body> tag:
+```html
+<!-- Feedback form-->
+<form role="form" name="feedbackform" id="feedbackform">
+	<!-- Name textbox -->
+	<div class="form-group">
+		<label for="name">Name:</label>
+		<input type="name" class="form-control" id="name">
+	</div>
+	<!--Feedback textarea -->
+	<div class="form-group">
+		<label for="feedback">Feedback:</label>
+		<textarea class="form-control" rows="5" id="feedback"></textarea>
+	</div>
+	<!-- Submit button -->
+	<button type="submit" class="btn btn-default">Submit</button>
+</form>
+```
+Textarea is one of Bootstrap's form inputs. Check [this link](http://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp) out for more of Bootstrap's form inputs. Run the index.html in your browser and you should see a simple feedback form. Now, we need to handle the form's behaviour in our JavaScript code.
+
+#### Handling form behaviour
+
+When the user clicks on the form's submit button, we want to collect their input. More specifically, we want to 'listen' for the 'submit' event, and then read the form inputs. We recommend you read [this]() before continuing. Create a file named *index.js* in your js folder, then reference it in your html like this:
+```html
+<script src="js/index.js"></script>
+```
+Copy and paste the following into your JavaScript file:
+```javascript
+// Attach a "submit" listener to your feedback form, and define the function that is called when the event is triggered
+form.onsubmit = function (e){
+	// Prevent the page from refreshing
+	e.preventDefault();
+	// Collect user input and store it as a feedback object
+	var newFeedback = {
+		name: document.getElementById("name").value,
+		feedback: document.getElementById("feedback").value
+	}
+	// Clear all form fields
+	form.reset();
+};
+```
+
+#### Form input validation
+
+### 5. Storing data
 
 It is extremely common for websites to take in user input and store it, and chances are you'll want to do this for your website too. To bypass all the complications of setting up a backend to store our data, we recommend you use client side storage called **localStorage**. With localStorage, websites can store data locally in the user's browser. More outdated browser versions may not support localStorage - [check this link out](http://www.w3schools.com/html/html5_webstorage.asp) to see if your browser version supports it.
 
@@ -323,8 +373,9 @@ var usersString = localStorage.getItem('users');
 // Convert string to JSON format
 var users = JSON.parse(usersString);
 ```
+Think of it as saving user records to a user table in a database. It's pretty much  **localStorage.setItem('yourTableName', JSON.stringify(yourTableData));**.
 
-### 5. jQuery plugins
+### 6. jQuery plugins
 
 jQuery plugins are a quick and powerful way to add more functionality to your website and make them more beautiful. These plugins are written by other developers and are usually open source, meaning you can freely use them in your website. The developers of these plugins usually write pretty good documentation on how to use the plugin in your website.
 
