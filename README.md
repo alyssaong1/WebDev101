@@ -26,9 +26,18 @@ We will go through the various tools that will help you through Assignment 3. Th
 			- [Adding Bootstrap to your project](#adding-bootstrap-to-your-project)
 			- [Using Bootstrap in your webpages](#using-bootstrap-in-your-webpages)
 			- [Customizing Bootstrap styles](#customizing-bootstrap-styles)
+- [myPurpleBtn{](#mypurplebtn)
 		- [3. Colour schemes](#3-colour-schemes)
-		- [4. jQuery plugins](#4-jquery-plugins)
-
+			- [Adobe Color CC](#adobe-color-cc)
+			- [Paletton](#paletton)
+		- [4. Working with forms](#4-working-with-forms)
+			- [Form appearance](#form-appearance)
+			- [Handling form behaviour](#handling-form-behaviour)
+			- [Form input validation](#form-input-validation)
+		- [5. Storing data](#5-storing-data)
+			- [How to use localStorage](#how-to-use-localstorage)
+			- [Working with JSON objects in localStorage](#working-with-json-objects-in-localstorage)
+		- [6. jQuery plugins](#6-jquery-plugins)
 
 ## Digital Wireframing
 
@@ -289,6 +298,9 @@ When the user clicks on the form's submit button, we want to collect their input
 ```
 Copy and paste the following into your JavaScript file:
 ```javascript
+// Create a variable that contains your feedback form
+var form = document.forms.feedbackform;
+
 // Attach a "submit" listener to your feedback form, and define the function that is called when the event is triggered
 form.onsubmit = function (e){
 	// Prevent the page from refreshing
