@@ -26,7 +26,6 @@ We will go through the various tools that will help you through Assignment 3. Th
 			- [Adding Bootstrap to your project](#adding-bootstrap-to-your-project)
 			- [Using Bootstrap in your webpages](#using-bootstrap-in-your-webpages)
 			- [Customizing Bootstrap styles](#customizing-bootstrap-styles)
-- [myPurpleBtn{](#mypurplebtn)
 		- [3. Colour schemes](#3-colour-schemes)
 			- [Adobe Color CC](#adobe-color-cc)
 			- [Paletton](#paletton)
