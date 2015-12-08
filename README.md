@@ -263,7 +263,7 @@ You may be thinking - what if I close my browser, or clear my history or clear m
 
 #### How to use localStorage
 
-Using localStorage is easy. Everything is done using the **localStorage** object in JavaScript. localStorage stores data in name/value pairs. For instance:
+Using localStorage is easy. Everything is done by calling methods on the **localStorage** object in JavaScript. localStorage stores data in name/value pairs. For instance:
 ```javascript
 localStorage.setItem('favouriteflavour', 'vanilla');
 ```
@@ -271,16 +271,58 @@ has the name 'favouriteflavour', with the value 'vanilla'. If we want to retriev
 ```javascript
 var myfavouriteflavour = localStorage.getItem('favouriteflavour');
 ```
-The variable myfavouriteflavour would be 'vanilla'.
+The variable myfavouriteflavour would be 'vanilla'. Lastly, if you want to delete this item from localStorage, we would have to call the removeItem method, like this:
+```javascript
+localStorage.removeItem('favouriteflavour');
+```
 
-- TODO: add link that explains json
-One limitation with localStorage is that you can only store strings. The problem with this is that we usually want to store many attributes for an object, e.g. a "user" object would have a name, date of birth, email address, etc. To address this, we can use JSON to represent our objects. If you are unsure of what JSON is, [read this](http://www.w3schools.com/json/json_syntax.asp). What if we want to store JSON objects?
+#### Working with JSON objects in localStorage
 
-#### Storing JSON objects in localStorage
-
-The trick is to turn our JSON objects into strings, then store it in localStorage.
-
-If we need to retrieve the JSON objects from storage, we retrieve the string, then convert it back into JSON format.
+What if we want to store objects which have many attributes each, e.g. a "user" object has a name, date of birth, email address, etc. To address this, we can use JSON to represent our objects. If you are unsure of what JSON is, [read this](http://www.w3schools.com/json/json_syntax.asp). However, one limitation with localStorage is that you can only store strings - so if you tried to store a JSON object into localStorage it wouldn't work. To get around this, we can convert our JSON objects into strings first, then store it in localStorage. Let's use our "user" object mentioned earlier as an example:
+```javascript
+var user = {
+	name: "John Smith",
+	dob: "12/07/1990",
+	email: "jsmith@hotmail.com"
+}
+```
+We have created a "user" object, and it is currently in JSON format. To convert our "user" object into a string, we use the JSON.stringify method on the user object. Overall, the code to convert our object into a string and save it into localStorage would look like this:
+```javascript
+localStorage.setItem('user', JSON.stringify(user));
+```
+If we need to retrieve the JSON object from storage, we retrieve the string, then convert it back into JSON format using the JSON.parse method:
+```javascript
+// Retrieve string from localStorage
+var userString = localStorage.getItem('user');
+// Convert string to JSON format
+var user = JSON.parse(userString);
+```
+This only stores one "user" object though. What if we wanted to store multiple user objects? To do this, we could save an array of JSON objects. If you've never worked with arrays of JSON objects before, read the JSON Arrays section of [this link](http://www.w3schools.com/json/json_syntax.asp). Our array of users would look something like this:
+```javascript
+var users = [
+	{
+		name: "John Smith",
+		dob: "12/07/1990",
+		email: "jsmith@hotmail.com"
+	},
+	{
+		name: "Ben Jones",
+		dob: "21/06/1993",
+		email: "bjones@hotmail.com"
+	}
+]
+```
+Here we have an array containing 2 user objects, but you can add as many users as you'd like to the array. You can even have one object in the array. We would then store this array in a similar way to storing JSON objects. We convert it into a string before storing it, like this:
+```javascript
+var usersString = localStorage.setItem('users', JSON.stringify(users));
+```
+To retrieve our JSON array, we would do the following:
+```javascript
+// Retrieve string from localStorage
+var usersString = localStorage.getItem('users');
+// Convert string to JSON format
+var users = JSON.parse(usersString);
+```
 
 ### 5. jQuery plugins
 
