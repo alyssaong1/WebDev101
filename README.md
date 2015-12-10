@@ -180,11 +180,11 @@ Hit install and that's it! Now, if you right click any html file in the left pan
 
 ### 2. HTML, CSS and JavaScript
 
-- TODO: Add resources for core concepts on CSS and Javascript 
+- TODO: Add resources for core concepts on CSS and Javascript
 
 #### Basics and overview
 
-When we make websites, we start with making the html file. Html defines the structure and content of your webpage. The html language is made up of *html tags*, that look like this: `<tagname>content</tagname>`. Here's an example of some html tags:
+When we make websites, we start with making the html file. Html defines the structure and content of your webpage. The html language is made up of **html tags**, that look like this: `<tagname>content</tagname>`. Here's an example of some html tags:
 ```html
 <!-- This tag defines large headers -->
 <h1>Paragraph header</h1>
@@ -203,6 +203,7 @@ p {
 	font-size: 20px;
 }
 ```
+
 Lastly, we need a way to describe the behaviour of our webpage. For instance, when the "submit" button of a form is clicked, the form data is captured and sent to a server. We use *JavaScript* to define the behaviour of our webpage. Like css, we usually write our JavaScript code in another js file separate from the html file. This way, our html file is much neater. Here's an example:
 
 Let's say our html has this button
@@ -303,8 +304,6 @@ Let's try making the background of the button a different colour in the Inspect 
 
 You should be able to see the colour of your button changing on the spot as you modify the background-color attribute in the inspector. Now that we've identified the classes that affect the colour of the button, we need to override these in our custom.css file.
 
-- TODO: Mention referencing custom.css in html
-
 Go back to your code, and copy and paste the following snippet into the custom.css file:
 ```css
 .btn-lg{
@@ -312,7 +311,13 @@ Go back to your code, and copy and paste the following snippet into the custom.c
 	color: #FFFFFF;
 }
 ```
-In this snippet of code we made the background color of the button purple, and the button font white. Run the html file in the browser and you should see that the button now looks like this:
+In this snippet of code we made the background color of the button purple, and the button font white. There's just one more thing we have to do, and that's referencing the css file in our html file. Go to the index.html file and add this line below the <head> tag:
+
+```html
+<link rel="stylesheet" type="text/css" href="custom.css"/>
+```
+
+Run the html file in the browser and you should see that the button now looks like this:
 
 ![bs-modified-btn](img/bs-modified-btn.png)
 
@@ -521,6 +526,6 @@ function showalert(){
 ```
 Here, we've created the confirm function that displays the sweetAlert. Run the html file in a browser, and click on the button. The sweetAlert should pop up, and it looks like this:
 
-![swal-3](img/swal3.png)
+![swal-3](img/swal-3.png)
 
 The sweetAlert homepage has documentation that shows tons of other kinds of sweetAlerts you can use - have fun exploring!
