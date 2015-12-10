@@ -164,7 +164,7 @@ You should see your folder (with any existing files) in the left hand pane. Clic
 
 #### Adding packages to Atom
 
-Being open source, Atom has awesome extensibility thanks to the work from other developers. We can easily add packages to Atom should we require additional functionality. To access the Atom settings pane for Macs, go to *Atom > Preferences...*. For Windows,... Click on the "Packages" tab - here you can see all the existing packages you have preinstalled packages that come with Atom. Click on the "Install" tab to start searching for packages online and installing them.
+Being open source, Atom has awesome extensibility thanks to the work from other developers. We can easily add packages to Atom should we require additional functionality. To access the Atom settings pane for Macs, go to *Atom > Preferences...*. For Windows, go to *File > Settings*. Click on the "Packages" tab - here you can see all the existing packages you have preinstalled packages that come with Atom. Click on the "Install" tab to start searching for packages online and installing them.
 
 As an example, let's say we want to install a package that allows us to run our html file in many different browsers straight from Atom. To do this, we could install the [open-in-browsers](https://atom.io/packages/open-in-browsers) package. Open the Atom settings pane, go to the "Install" tab (as described above) and search for "open-in-browsers".
 
@@ -178,7 +178,85 @@ Hit install and that's it! Now, if you right click any html file in the left pan
 
 - [Visual Studio Code](http://code.visualstudio.com) - Fun fact: VS Code was built on Atom.
 
-### 2. Bootstrap
+### 2. HTML, CSS and JavaScript
+
+- TODO: Add resources for core concepts on CSS and Javascript 
+
+#### Basics and overview
+
+When we make websites, we start with making the html file. Html defines the structure and content of your webpage. The html language is made up of *html tags*, that look like this: `<tagname>content</tagname>`. Here's an example of some html tags:
+```html
+<!-- This tag defines large headers -->
+<h1>Paragraph header</h1>
+<!-- This tag defines paragraphs -->
+<p>My first paragraph</p>
+```
+After defining the structure of the page, we also need to customize the styling of the page elements, such as its colour, size, or font. It is possible to do this in the html file itself, but it can make it very messy. Hence, we use *css* to define the presentation and styling of our html document. We write our css code in another css file separate from the html file. Here's an example of css being applied to a html document:
+```css
+h1 {
+	color: orange; /* This makes the header text orange */
+	text-align:center; /* This centers the header */
+}
+
+p {
+	font-family: "Times New Roman";
+	font-size: 20px;
+}
+```
+Lastly, we need a way to describe the behaviour of our webpage. For instance, when the "submit" button of a form is clicked, the form data is captured and sent to a server. We use *JavaScript* to define the behaviour of our webpage. Like css, we usually write our JavaScript code in another js file separate from the html file. This way, our html file is much neater. Here's an example:
+
+Let's say our html has this button
+```html
+<button type="button" id="submitBtn">Submit form!</button>
+```
+
+To configure what happens when the submit button is clicked, our JavaScript would look like this
+```javascript
+// Get the submit button from the html by its id
+var myButton = document.getElementById("submitBtn");
+
+// When the submit button is clicked, execute myFunction
+submitBtn.addEventListener("click", myFunction);
+
+function myFunction(){
+	// This function gets called when the submit button is clicked
+}
+```
+
+So as a whole, html defines the page structure, and css and JavaScript "add" onto html to define style and behaviour.
+
+![webpage-overview](img/webpage-overview.png)
+
+#### Referencing CSS and JavaScript files
+
+To tell the html file to use our separate css and JavaScript files, we need to **reference** our external css and JavaScript files in the html file. Say for instance we named our css file "mystyle.css", and our js file "mybehaviour.js". We would need to have these lines in the <head> section of our html:
+```html
+<!-- Referencing CSS files -->
+<link rel="stylesheet" type="text/css" href="mystyle.css"/>
+<!-- Referencing js files -->
+<script src="mybehaviour.js"></script>
+```
+Note that if you put your css or js files in folders, you would need to reference it relatively. So for example if your "mystyle.css" file were saved in a folder called "css", you'd need to reference it like this instead:
+```html
+<!-- Using relative link -->
+<link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
+```
+
+#### Additional resources
+
+Think you already know html, css and/or JavaScript but just need a refresher? Here are some good tutorials you can read through:
+
+- [HTML](http://www.w3schools.com/html/default.asp)
+- [CSS](http://www.w3schools.com/css/)
+- [JavaScript](http://www.w3schools.com/js/)
+
+If reading just isn't your thing, here are some really **awesome** hands-on tutorials for you to learn and practice coding in html, css and JavaScript.
+
+- [HTML and CSS](https://www.codecademy.com/learn/web)
+- [JavaScript](https://www.codecademy.com/learn/javascript)
+
+
+### 3. Bootstrap
 
 Bootstrap is a mobile-first front-end framework that will make responsive web development a breeze. Long story short, it'll instantly help make stuff look pretty when you insert elements into your webpage, and help you add some really cool functionality to your webpage. You won't be allowed to use templates though.
 
@@ -225,6 +303,8 @@ Let's try making the background of the button a different colour in the Inspect 
 
 You should be able to see the colour of your button changing on the spot as you modify the background-color attribute in the inspector. Now that we've identified the classes that affect the colour of the button, we need to override these in our custom.css file.
 
+- TODO: Mention referencing custom.css in html
+
 Go back to your code, and copy and paste the following snippet into the custom.css file:
 ```css
 .btn-lg{
@@ -249,7 +329,7 @@ And your css for that particular button would look like this:
 ```
 The styling is now unique to that button.
 
-### 3. Colour schemes
+### 4. Colour schemes
 
 Every website should have a colour scheme. Picking the colour scheme can be a bit of a challenge, but fortunately we've got some tools that will get you started.
 
@@ -263,7 +343,7 @@ Every website should have a colour scheme. Picking the colour scheme can be a bi
 
 - TODO: insert annotated image of how to use paletton
 
-### 4. Working with forms
+### 5. Working with forms
 
 It is extremely common for websites to take in user input, such as filling in a feedback form, registering for an online account, or logging in. We generally use forms for this. Forms contain a whole bunch of controls that collect user input with a submit button at the end - you can read more about forms [here](http://www.w3schools.com/html/html_forms.asp). Let's use a feedback form as an example. We will first create a feedback form in html, then retrieve user input with  JavaScript upon clicking the submit button.
 
@@ -296,6 +376,7 @@ When the user clicks on the form's submit button, we want to collect their input
 <script src="js/index.js"></script>
 ```
 Copy and paste the following into your JavaScript file:
+- TODO: document.onContentLoaded
 ```javascript
 // Create a variable that contains your feedback form
 var form = document.forms.feedbackform;
@@ -330,7 +411,7 @@ Form validation is basically making sure the user enters healthy inputs before s
 ```
 We've made it so that both name and feedback inputs must be filled out before the form is successfully submitted, and the name input has to have a minimum length of 4 characters. Run the html file in the browser, then try violating some of the validation rules during submission e.g. leaving both inputs blank and clicking the submit button. You can see that you won't be able to submit the form, and the form tells you what you need to do to fulfill the validation requirements. To find out more input attributes you can add, check [this link](http://www.w3schools.com/html/html_form_attributes.asp) out.
 
-### 5. Storing data
+### 6. Storing data
 
 It is extremely common for websites to take in user input and store it, and chances are you'll want to do this for your website too. To bypass all the complications of setting up a backend to store our data, we recommend you use client side storage called **localStorage**. With localStorage, websites can store data locally in the user's browser. More outdated browser versions may not support localStorage - [check this link out](http://www.w3schools.com/html/html5_webstorage.asp) to see if your browser version supports it.
 
@@ -400,7 +481,7 @@ var users = JSON.parse(usersString);
 ```
 Think of it as saving user records to a user table in a database. It's pretty much  `localStorage.setItem('yourTableName', JSON.stringify(yourTableData));`.
 
-### 6. jQuery plugins
+### 7. jQuery plugins
 
 jQuery plugins are a quick and powerful way to add more functionality to your website and make them more beautiful. These plugins are written by other developers and are usually open source, meaning you can freely use them in your website. The developers of these plugins usually write pretty good documentation on how to use the plugin in your website.
 
@@ -434,8 +515,12 @@ The line above adds an onclick listener to our button, meaning that when the but
 ```
 Again, make sure you use your own file path. For our example, let's use the success message sweetAlert. As shown in the documentation, copy and paste the following lines of code into the newly created JavaScript file.  
 ```javascript
-function confirm(){
+function showalert(){
   swal("Good job!", "You clicked the button!", "success");
 }
 ```
-Here, we've created the confirm function that displays the sweetAlert. Run the html file in a browser, and click on the button. The sweetAlert should pop up. The sweetAlert homepage has documentation that shows tons of other kinds of sweetAlerts you can use - have fun exploring!
+Here, we've created the confirm function that displays the sweetAlert. Run the html file in a browser, and click on the button. The sweetAlert should pop up, and it looks like this:
+
+![swal-3](img/swal3.png)
+
+The sweetAlert homepage has documentation that shows tons of other kinds of sweetAlerts you can use - have fun exploring!
