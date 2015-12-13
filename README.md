@@ -203,7 +203,7 @@ Then, open the html file in your browser. You do this by double clicking on the 
 
 - TODO: add img with basic html
 
-The h1 tag represents a large header, and the p tag represents a paragraph of text. Let's try creating a table using html as another example. A table consists of a table header (a row with titles for each of the columns), and then there's the body of the table, which is made up of rows and columns that contain the content. A simple table in html would look like this:
+The h1 tag represents a large header, and the p tag represents a paragraph of text. Let's try creating a table using html as another example. A table consists of a table header (a row with titles for each of the columns), and then there's the body of the table, which is made up of rows and columns that contain the content. Copy and paste this simple table right underneath the `<p>My first paragraph</p>` line in your html file:
 
 ```html
 <table>
@@ -228,7 +228,7 @@ The h1 tag represents a large header, and the p tag represents a paragraph of te
 ```
 Run the html file in your browser, and your table should look like this:
 
-- TODO: add img with table
+- TODO: add img with table, insert links below
 
 As you can see, the tr tag represents each row of the table, the th tag represents a table column title and the td tag represents the columns that contain content.
 
@@ -263,61 +263,57 @@ But... If you run your project you won't see the styles being applied, and that'
 <!-- Referencing CSS files -->
 <link rel="stylesheet" type="text/css" href="mystyle.css"/>
 ```
+Now run your index.html file in your browser. You should see the following:
+
+- TODO: insert img of post css, insert links below
+
 We recommend you read up on how css can be used to style the following:
 - Fonts
 - Colours
 - Borders
 
-
 #### JavaScript
 
-Lastly, we need a way to describe the behaviour of our webpage. For instance, when the "submit" button of a form is clicked, the form data is captured and sent to a server. We use *JavaScript* to define the behaviour of our webpage. Like css, we usually write our JavaScript code in another js file separate from the html file. This way, our html file is much neater. Here's an example:
+Lastly, we need a way to describe the behaviour of our webpage. For instance, when the "submit" button of a form is clicked, the form data is captured and sent to a server. We use *JavaScript* to define the behaviour of our webpage. Like css, we usually write our JavaScript code in another js file separate from the html file. This way, our html file is much neater.
 
-Let's say our html has this button
+Let's try creating a button in our html page, then applying JavaScript to the button to make something happen when the button is clicked. To add a button to our webpage, copy and paste the following line under the table:
 ```html
-<button type="button" id="submitBtn">Submit form!</button>
+<button type="button" id="myBtn">My button</button>
 ```
-
-To configure what happens when the submit button is clicked, our JavaScript would look like this
+Right click on the project folder in the left pane and click *New File*. Name the file index.js. We want to configure the button's behaviour. Copy and paste the following lines of code into the index.js file:
 ```javascript
-// Get the submit button from the html by its id
-var myButton = document.getElementById("submitBtn");
+// Only add the listener after the html document is fully loaded
+document.addEventListener("DOMContentLoaded", function(){
+	// Get the submit button from the html by its id
+	var myButton = document.getElementById("myBtn");
 
-// When the submit button is clicked, execute myFunction
-submitBtn.addEventListener("click", myFunction);
+	// When the submit button is clicked, execute myFunction
+	myButton.addEventListener("click", myFunction);
 
-function myFunction(){
-	// This function gets called when the submit button is clicked
-}
+	function myFunction(){
+		// This function is our event handler. An alert shows when the submit button is clicked.
+		alert("My button was clicked");
+	}
+});
 ```
+We need the DOMContentLoaded listener to ensure that our event listener is only attached to the button **after** the entire html document is loaded. This is to prevent situations where the JavaScript might try to access the button before the button is even loaded on the html document. Similarly with our css file, we'll need to add a reference to the JavaScript file in the html file. Copy and paste the following lines into the <head> section of your html file:
+```html
+<!-- Referencing js files -->
+<script src="index.js"></script>
+```
+Note: if you put your css or js files in folders, you would need to reference it relatively. So for example if your index.js file were saved in a folder called "js", you'd need to reference it like this instead:
+```html
+<!-- Using relative link -->
+<script src="js/index.js"></script>
+```
+Now, run the html file and then try and click the button. An alert like this should pop up:
 
-Some core JavaScript concepts you should read up on are:
+- TODO: insert img of alert
+
+We recommend you read up on these core JavaScript concepts:
 - Variables
 - Functions
 - Events, listeners and handlers
-
-#### Referencing JavaScript
-
-#### Overview
-
-So as a whole, html defines the page structure, and css and JavaScript "add" onto html to define style and behaviour.
-
-![webpage-overview](img/webpage-overview.png)
-
-#### Referencing CSS and JavaScript files
-
-To tell the html file to use our separate css and JavaScript files, we need to **reference** our external css and JavaScript files in the html file. Say for instance we named our css file "mystyle.css", and our js file "mybehaviour.js". We would need to have these lines in the <head> section of our html:
-```html
-<!-- Referencing CSS files -->
-<link rel="stylesheet" type="text/css" href="mystyle.css"/>
-<!-- Referencing js files -->
-<script src="mybehaviour.js"></script>
-```
-Note that if you put your css or js files in folders, you would need to reference it relatively. So for example if your "mystyle.css" file were saved in a folder called "css", you'd need to reference it like this instead:
-```html
-<!-- Using relative link -->
-<link rel="stylesheet" type="text/css" href="css/mystyle.css"/>
-```
 
 #### Additional resources
 
@@ -331,6 +327,12 @@ Think you already know html, css and/or JavaScript but just need a refresher? He
 - [HTML](http://www.w3schools.com/html/default.asp)
 - [CSS](http://www.w3schools.com/css/)
 - [JavaScript](http://www.w3schools.com/js/)
+
+#### Overview
+
+So as a whole, html defines the page structure, and css and JavaScript "add" onto html to define style and behaviour.
+
+![webpage-overview](img/webpage-overview.png)
 
 ### 3. Bootstrap
 
@@ -464,7 +466,7 @@ Textarea is one of Bootstrap's form inputs. Check [this link](http://www.w3schoo
 
 #### Handling form behaviour
 
-When the user clicks on the form's submit button, we want to collect their input. More specifically, we want to 'listen' for the 'submit' event, and then read the form inputs. We recommend you read [this]() before continuing. Create a file named *index.js* in your js folder, then reference it in your html like this:
+When the user clicks on the form's submit button, we want to collect their input. More specifically, we want to 'listen' for the 'submit' event, and then read the form inputs. We recommend you read [this]() before continuing. If you haven't yet already, create a file named *index.js* in your js folder, then reference it in your html like this:
 ```html
 <script src="js/index.js"></script>
 ```
@@ -602,7 +604,7 @@ When you reference the CSS and JavaScript files, make sure the file paths are co
 ```html
 <button type="button" onclick="showalert()">Show me the alert!</button>
 ```
-The line above adds an onclick listener to our button, meaning that when the button is clicked, the showalert function will be called. Now let's write the showalert function in JavaScript (our click event handler). To do this, we'll add a new JavaScript file to our project folder. A quick way to do this in atom is to right click the left pane (where you see all the files), then click *New File*. We will call it index.js. You can name it anything you like, so long as it ends with .js to indicate a JavaScript file. Then, reference the newly created JavaScript file in the html file, something like this:
+The line above adds an onclick listener to our button, meaning that when the button is clicked, the showalert function will be called. Now let's write the showalert function in JavaScript (our click event handler). If you've already created the index.js file from following the tutorials above, go to your index.js file. Otherwise, we'll add a new JavaScript file to our project folder. A quick way to do this in atom is to right click the left pane (where you see all the files), then click *New File*. We will call it index.js. You can name it anything you like, so long as it ends with .js to indicate a JavaScript file. Then, reference the newly created JavaScript file in the html file, something like this:
 ```html
 <script src="index.js"></script>
 ```
