@@ -189,14 +189,22 @@ Hit install and that's it! Now, if you right click any html file in the left pan
 
 #### HTML
 
-When we make websites, we start with making the html file. Html defines the structure and content of your webpage. The html language is made up of **html tags**, that look like this: `<tagname>content</tagname>`. Here's an example of some html tags:
+When we make websites, we start with making the html file. Html defines the structure and content of your webpage. The html language is made up of **html tags**, that look like this: `<tagname>content</tagname>`. Let's try writing some html. Add a new project in Atom as described in the instructions above, then right click the project folder in the left hand pane of Atom and click on *New File*. Name the file index.html - the naming here is very important. In a website, the index.html page represents the home page, or the first page the user will see upon entering your website. Copy and paste in the following lines into the html file:
+
+- todo: use proper html document structure
+
 ```html
 <!-- This tag defines large headers -->
 <h1>Paragraph header</h1>
 <!-- This tag defines paragraphs -->
 <p>My first paragraph</p>
 ```
-Let's try creating a table using html as another example. A table consists of a table header (a row with titles for each of the columns), and then there's the body of the table, which is made up of rows and columns that contain the content. A simple table in html would look like this:
+Then, open the html file in your browser. You do this by double clicking on the html file inside your actual folder in Windows Explorer for Windows users, or in Finder for Mac users. The other way (and also the recommended way!) is to add an Atom package that lets you run it in the browser - to do this, refer to the [instructions above](#adding-packages-to-atom) on how to add packages to Atom. Your website should look like this:
+
+- TODO: add img with basic html
+
+The h1 tag represents a large header, and the p tag represents a paragraph of text. Let's try creating a table using html as another example. A table consists of a table header (a row with titles for each of the columns), and then there's the body of the table, which is made up of rows and columns that contain the content. A simple table in html would look like this:
+
 ```html
 <table>
 	<!-- The title row -->
@@ -218,6 +226,10 @@ Let's try creating a table using html as another example. A table consists of a 
 	</tr>
 </table>
 ```
+Run the html file in your browser, and your table should look like this:
+
+- TODO: add img with table
+
 As you can see, the tr tag represents each row of the table, the th tag represents a table column title and the td tag represents the columns that contain content.
 
 Some other commonly used html elements you should have a read up on are:
@@ -227,7 +239,7 @@ Some other commonly used html elements you should have a read up on are:
 
 #### CSS
 
-After defining the structure of the page, we also need to customize the styling of the page elements, such as its colour, size, or font. It is possible to do this in the html file itself, but it can make it very messy. Hence, we use *css* to define the presentation and styling of our html document. We write our css code in another css file separate from the html file. Here's an example of css being applied to a html document:
+After defining the structure of the page, we also need to customize the styling of the page elements, such as its colour, size, or font. It is possible to do this in the html file itself, but it can make it very messy. Hence, we use *css* to define the presentation and styling of our html document. We write our css code in another css file separate from the html file. Let's try applying css to our html document created in the section before. Right click on your project folder in Atom, click *New File*, and name it style.css. Copy and paste the following into your style.css file:
 ```css
 h1 {
 	color: orange; /* This makes the header text orange */
@@ -246,10 +258,16 @@ td {
 	padding: 20px;
 }
 ```
-You should also read up on how css can be used to style:
+But... If you run your project you won't see the styles being applied, and that's because we haven't "linked" the html and css file yet. We need to add a reference to the css file in our html file. Copy and paste the following lines into the <head> section of your html file:
+```html
+<!-- Referencing CSS files -->
+<link rel="stylesheet" type="text/css" href="mystyle.css"/>
+```
+We recommend you read up on how css can be used to style the following:
 - Fonts
 - Colours
 - Borders
+
 
 #### JavaScript
 
@@ -277,6 +295,10 @@ Some core JavaScript concepts you should read up on are:
 - Variables
 - Functions
 - Events, listeners and handlers
+
+#### Referencing JavaScript
+
+#### Overview
 
 So as a whole, html defines the page structure, and css and JavaScript "add" onto html to define style and behaviour.
 
@@ -395,6 +417,7 @@ In Bootstrap, icons are called **glyphicons**, or glyphs. You may have noticed w
 <p>Search icon: <span class="glyphicon glyphicon-search"></span></p>
 ```
 Run the html file in your browser, and you should see the following:
+
 ![bs-glyphs](img/bs-glyphs.png)
 
 For a full list of glyphs you can use, refer to [this link](http://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp). If you feel that Bootstrap's glyphs don't provide you with enough icons for your website, you should definitely check out [Font Awesome](https://fortawesome.github.io/Font-Awesome/). They have a much larger range of icons available for you to use - view their list of icons [here](https://fortawesome.github.io/Font-Awesome/icons/).
