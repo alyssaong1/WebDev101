@@ -187,7 +187,7 @@ Hit install and that's it! Now, if you right click any html file in the left pan
 
 - TODO: Add resources for core concepts on CSS and Javascript
 
-#### Basics and overview
+#### HTML
 
 When we make websites, we start with making the html file. Html defines the structure and content of your webpage. The html language is made up of **html tags**, that look like this: `<tagname>content</tagname>`. Here's an example of some html tags:
 ```html
@@ -196,6 +196,37 @@ When we make websites, we start with making the html file. Html defines the stru
 <!-- This tag defines paragraphs -->
 <p>My first paragraph</p>
 ```
+Let's try creating a table using html as another example. A table consists of a table header (a row with titles for each of the columns), and then there's the body of the table, which is made up of rows and columns that contain the content. A simple table in html would look like this:
+```html
+<table>
+	<!-- The title row -->
+	<tr>
+		<th>Name</th>
+		<th>Date of birth</th>
+		<th>Email</th>
+	</tr>
+	<!-- The data rows -->
+	<tr>
+		<td>John Smith</td>
+		<td>19/09/1955</td>
+		<td>jsmith@gmail.com</td>
+	</tr>
+	<tr>
+		<td>Rick Morty</td>
+		<td>21/03/1987</td>
+		<td>rmorty@yahoo.com</td>
+	</tr>
+</table>
+```
+As you can see, the tr tag represents each row of the table, the th tag represents a table column title and the td tag represents the columns that contain content.
+
+Some other commonly used html elements you should have a read up on are:
+- Paragraphs
+- Links
+- Image and backgrounds
+
+#### CSS
+
 After defining the structure of the page, we also need to customize the styling of the page elements, such as its colour, size, or font. It is possible to do this in the html file itself, but it can make it very messy. Hence, we use *css* to define the presentation and styling of our html document. We write our css code in another css file separate from the html file. Here's an example of css being applied to a html document:
 ```css
 h1 {
@@ -208,6 +239,19 @@ p {
 	font-size: 20px;
 }
 ```
+Let's use css to style a table as another example. We'll increase the padding around each column, like this:
+```css
+td {
+	/* Select all the td (column) elements and space them out*/
+	padding: 20px;
+}
+```
+You should also read up on how css can be used to style:
+- Fonts
+- Colours
+- Borders
+
+#### JavaScript
 
 Lastly, we need a way to describe the behaviour of our webpage. For instance, when the "submit" button of a form is clicked, the form data is captured and sent to a server. We use *JavaScript* to define the behaviour of our webpage. Like css, we usually write our JavaScript code in another js file separate from the html file. This way, our html file is much neater. Here's an example:
 
@@ -228,6 +272,11 @@ function myFunction(){
 	// This function gets called when the submit button is clicked
 }
 ```
+
+Some core JavaScript concepts you should read up on are:
+- Variables
+- Functions
+- Events, listeners and handlers
 
 So as a whole, html defines the page structure, and css and JavaScript "add" onto html to define style and behaviour.
 
@@ -250,17 +299,16 @@ Note that if you put your css or js files in folders, you would need to referenc
 
 #### Additional resources
 
+If you feel that your html, css and/or JavaScript is very weak, we definitely recommend you try these really **awesome** hands-on tutorials to learn and practice coding in html, css and JavaScript:
+
+- [HTML and CSS](https://www.codecademy.com/learn/web)
+- [JavaScript](https://www.codecademy.com/learn/javascript)
+
 Think you already know html, css and/or JavaScript but just need a refresher? Here are some good tutorials you can read through:
 
 - [HTML](http://www.w3schools.com/html/default.asp)
 - [CSS](http://www.w3schools.com/css/)
 - [JavaScript](http://www.w3schools.com/js/)
-
-If reading just isn't your thing, here are some really **awesome** hands-on tutorials for you to learn and practice coding in html, css and JavaScript.
-
-- [HTML and CSS](https://www.codecademy.com/learn/web)
-- [JavaScript](https://www.codecademy.com/learn/javascript)
-
 
 ### 3. Bootstrap
 
@@ -296,7 +344,7 @@ Run your html file in your browser. Your button should look something like this:
 
 ![bs-btn](img/bs-btn.png)
 
-By adding classes, Bootstrap provides us with styles that we can apply to our button - no longer do we have the ugly default html button. For more Bootstrap button customizations, view the documentation [here](http://getbootstrap.com/css/#buttons). Scroll through the documentation to see the customizations you can apply on other elements too.
+By adding classes, Bootstrap provides us with styles that we can apply to our button - no longer do we have the ugly default html button. For more Bootstrap button customizations, view the documentation [here](http://getbootstrap.com/css/#buttons). Scroll through the documentation to see the customizations you can apply on other elements too. If you want tutorials on how to use Bootstrap, refer to [this link](http://www.w3schools.com/bootstrap/).
 
 #### Customizing Bootstrap styles
 It's highly likely that you'd want to use your own colour scheme, borders and fonts for your website elements. The good news is, we can customize Bootstrap's styles by overriding the CSS classes with our own styles. As an example, let's try customizing the colour and border of the large button we made.
@@ -338,6 +386,18 @@ And your css for that particular button would look like this:
 }
 ```
 The styling is now unique to that button.
+
+#### Using Bootstrap icons
+
+In Bootstrap, icons are called **glyphicons**, or glyphs. You may have noticed when you added Bootstrap to your project, there was a folder called "fonts" that had glyphicon-halfling files. These are what Bootstrap uses to support icons in your website. Let's try adding some glyphs to our webpage. Go to your index.html file and add the following inside the <body> tag:
+```html
+<p>Envelope icon: <span class="glyphicon glyphicon-envelope"></span></p>
+<p>Search icon: <span class="glyphicon glyphicon-search"></span></p>
+```
+Run the html file in your browser, and you should see the following:
+![bs-glyphs](img/bs-glyphs.png)
+
+For a full list of glyphs you can use, refer to [this link](http://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp). If you feel that Bootstrap's glyphs don't provide you with enough icons for your website, you should definitely check out [Font Awesome](https://fortawesome.github.io/Font-Awesome/). They have a much larger range of icons available for you to use - view their list of icons [here](https://fortawesome.github.io/Font-Awesome/icons/).
 
 ### 4. Colour schemes
 
