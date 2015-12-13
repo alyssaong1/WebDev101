@@ -296,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 });
 ```
-We need the DOMContentLoaded listener to ensure that our event listener is only attached to the button **after** the entire html document is loaded. This is to prevent situations where the JavaScript might try to access the button before the button is even loaded on the html document. Similarly with our css file, we'll need to add a reference to the JavaScript file in the html file. Copy and paste the following lines into the <head> section of your html file:
+We need to wait for the DOM content to be fully loaded to ensure that our click event listener is only attached to the button **after** the entire html document is loaded. This is to prevent situations where the JavaScript might try to access the button before the button is even loaded on the html document. Similarly with our css file, we'll need to add a reference to the JavaScript file in the html file. Copy and paste the following lines into the <head> section of your html file:
 ```html
 <!-- Referencing js files -->
 <script src="index.js"></script>
@@ -334,7 +334,21 @@ So as a whole, html defines the page structure, and css and JavaScript "add" ont
 
 ![webpage-overview](img/webpage-overview.png)
 
-### 3. Bootstrap
+### 3. Colour schemes
+
+Every website should have a colour scheme. Picking the colour scheme can be a bit of a challenge, but fortunately we've got some tools that will get you started.
+
+#### Adobe Color CC
+
+[Try it out!](https://color.adobe.com) Adobe Color CC allows you to pick your colour scheme based on colour rules, like analogous, monochromatic and complementary. After you select a colour rule, try dragging the circles on the colour wheel around - the colour palette automatically readjusts itself according to the colour rule you selected.
+
+#### Paletton
+
+[Try it out!](http://paletton.com) Paletton also lets you pick your colour scheme based on colour rules, but with more customization and control available. Hover over the various colours and shades in the square palette to view their hex codes.
+
+- TODO: insert annotated images of how to use paletton and adobe color cc
+
+### 4. Bootstrap
 
 Bootstrap is a mobile-first front-end framework that will make responsive web development a breeze. Long story short, it'll instantly help make stuff look pretty when you insert elements into your webpage, and help you add some really cool functionality to your webpage. You won't be allowed to use templates though.
 
@@ -423,20 +437,6 @@ Run the html file in your browser, and you should see the following:
 ![bs-glyphs](img/bs-glyphs.png)
 
 For a full list of glyphs you can use, refer to [this link](http://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp). If you feel that Bootstrap's glyphs don't provide you with enough icons for your website, you should definitely check out [Font Awesome](https://fortawesome.github.io/Font-Awesome/). They have a much larger range of icons available for you to use - view their list of icons [here](https://fortawesome.github.io/Font-Awesome/icons/).
-
-### 4. Colour schemes
-
-Every website should have a colour scheme. Picking the colour scheme can be a bit of a challenge, but fortunately we've got some tools that will get you started.
-
-#### Adobe Color CC
-
-[Try it out!](https://color.adobe.com) Adobe Color CC allows you to pick your colour scheme based on colour rules, like analogous, monochromatic and complementary. After you select a colour rule, try dragging the circles on the colour wheel around - the colour palette automatically readjusts itself according to the colour rule you selected.
-
-#### Paletton
-
-[Try it out!](http://paletton.com) Paletton also lets you pick your colour scheme based on colour rules, but with more customization and control available. Hover over the various colours and shades in the square palette to view their hex codes.
-
-- TODO: insert annotated image of how to use paletton
 
 ### 5. Working with forms
 
