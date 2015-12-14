@@ -210,18 +210,15 @@ The h1 tag represents a large header, and the p tag represents a paragraph of te
 	<!-- The title row -->
 	<tr>
 		<th>Name</th>
-		<th>Date of birth</th>
 		<th>Email</th>
 	</tr>
 	<!-- The data rows -->
 	<tr>
 		<td>John Smith</td>
-		<td>19/09/1955</td>
 		<td>jsmith@gmail.com</td>
 	</tr>
 	<tr>
 		<td>Rick Morty</td>
-		<td>21/03/1987</td>
 		<td>rmorty@yahoo.com</td>
 	</tr>
 </table>
@@ -233,9 +230,9 @@ Run the html file in your browser, and your table should look like this:
 As you can see, the tr tag represents each row of the table, the th tag represents a table column title and the td tag represents the columns that contain content.
 
 Some other commonly used html elements you should have a read up on are:
-- Paragraphs
-- Links
-- Image and backgrounds
+- [Paragraphs](http://www.w3schools.com/html/html_paragraphs.asp)
+- [Links](http://www.w3schools.com/html/html_links.asp)
+- [Images](http://www.w3schools.com/html/html_images.asp)
 
 #### CSS
 
@@ -269,8 +266,11 @@ Now run your index.html file in your browser. You should see the following:
 
 We recommend you read up on how css can be used to style the following:
 - Fonts
-- Colours
-- Borders
+	- [Resource 1](http://sixrevisions.com/css/font-face-guide/)
+	- [Resource 2](http://bavotasan.com/2010/embedding-fonts-web-site-css-font-face/)
+- [Colours](http://www.w3schools.com/cssref/css_colors_legal.asp)
+- [Borders](http://www.w3schools.com/css/css_border.asp)
+- [Backgrounds](http://www.w3schools.com/css/css_background.asp)
 
 #### JavaScript
 
@@ -311,9 +311,9 @@ Now, run the html file and then try and click the button. An alert like this sho
 - TODO: insert img of alert
 
 We recommend you read up on these core JavaScript concepts:
-- Variables
-- Functions
-- Events, listeners and handlers
+- [Variables](http://www.w3schools.com/js/js_variables.asp)
+- [Functions](http://www.w3schools.com/js/js_functions.asp)
+- [Events, listeners and handlers](http://www.w3schools.com/js/js_htmldom_eventlistener.asp)
 
 #### Additional resources
 
@@ -447,51 +447,53 @@ It is extremely common for websites to take in user input, such as filling in a 
 Bootstrap provides styling for forms, which we will use. For more detail on Bootstrap forms, check out [this link](http://www.w3schools.com/bootstrap/bootstrap_forms.asp). The next 3 chapters have more info on Bootstrap form inputs which are very handy when you try to customize your form. Go into your index.html page and copy paste the following lines of code in the <body> tag:
 ```html
 <!-- Feedback form-->
-<form role="form" name="feedbackform" id="feedbackform">
+<form role="form" name="userform" id="userform">
 	<!-- Name textbox -->
 	<div class="form-group">
-		<label for="name">Name:</label>
+		<label for="name">Full Name:</label>
 		<input type="name" class="form-control" id="name">
 	</div>
 	<!--Feedback textarea -->
 	<div class="form-group">
-		<label for="feedback">Feedback:</label>
-		<textarea class="form-control" rows="5" id="feedback"></textarea>
+		<label for="email">Email:</label>
+		<input type="email" class="form-control" id="email">
 	</div>
 	<!-- Submit button -->
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
 ```
-Textarea is one of Bootstrap's form inputs. Check [this link](http://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp) out for more of Bootstrap's form inputs. Run the index.html in your browser and you should see a simple feedback form. Now, we need to handle the form's behaviour in our JavaScript code.
+To see what other form inputs Bootstrap has, check [this link](http://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp). Run the index.html in your browser and you should see a simple form consisting of 2 text inputs. Now, we need to handle the form's behaviour in our JavaScript code.
 
 #### Handling form behaviour
 
-When the user clicks on the form's submit button, we want to collect their input. More specifically, we want to 'listen' for the 'submit' event, and then read the form inputs. We recommend you read [this]() before continuing. If you haven't yet already, create a file named *index.js* in your js folder, then reference it in your html like this:
+When the user clicks on the form's submit button, we want to collect their input. More specifically, we want to 'listen' for the 'submit' event, and then read the form inputs. We recommend you read up about [event listeners](http://www.w3schools.com/js/js_htmldom_eventlistener.asp) before continuing. If you haven't yet already, create a file named *index.js* in your js folder, then reference it in your html like this:
 ```html
 <script src="js/index.js"></script>
 ```
 Copy and paste the following into your JavaScript file:
-- TODO: document.onContentLoaded
 ```javascript
-// Create a variable that contains your feedback form
-var form = document.forms.feedbackform;
+// Wait for the html document to finish loading before performing actions on our form
+document.addEventListener("DOMContentLoaded", function(){
+	// Create a variable that contains your feedback form
+	var form = document.forms.userform;
 
-// Attach a "submit" listener to your feedback form, and define the function that is called when the event is triggered
-form.onsubmit = function (e){
-	// Prevent the page from refreshing
-	e.preventDefault();
-	// Collect user input and store it as a feedback object
-	var newFeedback = {
-		name: document.getElementById("name").value,
-		feedback: document.getElementById("feedback").value
+	// Attach a "submit" listener to your user form, and define the function that is called when the event is triggered
+	form.onsubmit = function (e){
+		// Prevent the page from automatically refreshing after submitting the form
+		e.preventDefault();
+		// Collect user input and store it as a user object
+		var newUser = {
+			name: document.getElementById("name").value,
+			email: document.getElementById("email").value
+		}
+		// Show the newUser object in the console
+		console.log(newUser);
+		// Clear all form fields
+		form.reset();
 	}
-	// Show the newFeedback object in the console
-	console.log(newFeedback);
-	// Clear all form fields
-	form.reset();
-};
+});
 ```
-Run the html file in your browser, then go *right click > Inspect Element*. When you write values into the form and submit it, you should see the newFeedback object being printed in your console. Expand the object and you can see the values you input into the form being saved into the newFeedback object.
+Run the html file in your browser, then go *right click > Inspect Element*. A pane should pop up - click on 'console' in the pane. When you write values into the form and submit it, you should see the newFeedback object being printed in your console. Expand the object and you can see the values you input into the form being saved into the newUser object.
 
 #### Form input validation
 
@@ -499,12 +501,10 @@ Form validation is basically making sure the user enters healthy inputs before s
 ```html
 <!-- Change the line with the name input to this -->
 <input type="name" minlength="4" class="form-control" id="name" required>
+<!-- Change the line with the email input to this -->
+<input type="email" class="form-control" id="email" required>
 ```
-```html
-<!-- Change the line with the feedback input to this -->
-<textarea class="form-control" rows="5" id="feedback" required></textarea>
-```
-We've made it so that both name and feedback inputs must be filled out before the form is successfully submitted, and the name input has to have a minimum length of 4 characters. Run the html file in the browser, then try violating some of the validation rules during submission e.g. leaving both inputs blank and clicking the submit button. You can see that you won't be able to submit the form, and the form tells you what you need to do to fulfill the validation requirements. To find out more input attributes you can add, check [this link](http://www.w3schools.com/html/html_form_attributes.asp) out.
+We've made it so that both name and email inputs must be filled out before the form is successfully submitted, and the name input has to have a minimum length of 4 characters. Run the html file in the browser, then try violating some of the validation rules during submission e.g. leaving both inputs blank, or writing less than 4 characters in the name input box and clicking the submit button. You can see that you won't be able to submit the form, and the form tells you what you need to do to fulfill the validation requirements. To find out more input attributes you can add, check [this link](http://www.w3schools.com/html/html_form_attributes.asp) out.
 
 ### 6. Storing data
 
@@ -516,15 +516,15 @@ You may be thinking - what if I close my browser, or clear my history or clear m
 
 Using localStorage is easy. Everything is done by calling methods on the `localStorage` object in JavaScript. localStorage stores data in name/value pairs. For instance:
 ```javascript
-localStorage.setItem('favouriteflavour', 'vanilla');
+localStorage.setItem('fullname', 'John Smith');
 ```
-has the name 'favouriteflavour', with the value 'vanilla'. If we want to retrieve this data from localStorage, we would need to call the getItem method, like this:
+has the name 'fullname', with the value 'John Smith'. If we want to retrieve this data from localStorage, we would need to call the getItem method, like this:
 ```javascript
-var myfavouriteflavour = localStorage.getItem('favouriteflavour');
+var myfullname = localStorage.getItem('fullname');
 ```
-The variable myfavouriteflavour would be 'vanilla'. Lastly, if you want to delete this item from localStorage, we would have to call the removeItem method, like this:
+The variable myfullname would be 'John Smith'. Lastly, if you want to delete this item from localStorage, we would have to call the removeItem method, like this:
 ```javascript
-localStorage.removeItem('favouriteflavour');
+localStorage.removeItem('fullname');
 ```
 
 #### Working with JSON objects in localStorage
@@ -575,6 +575,85 @@ var usersString = localStorage.getItem('users');
 var users = JSON.parse(usersString);
 ```
 Think of it as saving user records to a user table in a database. It's pretty much  `localStorage.setItem('yourTableName', JSON.stringify(yourTableData));`.
+
+#### Combining forms and localStorage
+
+As an example, let's try combining the simple name and email form we made previously with localStorage. When the user submits the form, the name and email in the form inputs are stored into localStorage. We will then retrieve all names and emails from localStorage and display the data on our webpage in a table. If you haven't yet followed the Working With Forms tutorial above, [go back up](#5-working-with-forms) and complete it before continuing. After that, go to your index.js file, then replace the `console.log(newUser)` line with the following:
+
+```javascript
+// Check if a saved users table exists in the database
+if (localStorage.getItem('savedUsers') === null){
+	// If there isn't one, save the new user as an array into the 'savedUsers' table
+	localStorage.setItem('savedUsers', JSON.stringify([newUser]));
+} else {
+	// If there's already a table of saved users, retrieve all the saved users in the table first
+	var existingUsers = JSON.parse(localStorage.savedUsers);
+	// Add the new user to the array of existing users
+	existingUsers.push(newUser);
+	// Save the updated list of users into the 'savedUsers' table
+	localStorage.setItem('savedUsers', JSON.stringify(existingUsers));
+}
+```
+
+The above code snippet handles the storing of our users after form submission. Now, we need to display the updated list of users onto the webpage in a table. The number of table rows is dependent on the number of users that are saved, and so we cannot write code for the table directly in the html. Fortunately, we can create html elements using javascript, and then add these into our html document using javascript as well.
+
+Let's start off with retrieving the updated list from localStorage when our html document finishes loading. Go to your index.js file, and copy and paste the following right after the document.addEventListener... line at the start:
+```javascript
+// After html document has finished loading, check if there exists any saved users
+if (localStorage.getItem('savedUsers') !== null){
+	// If there are saved users, retrieve them from localStorage
+	var existingUsers = JSON.parse(localStorage.savedUsers);
+	// Loop through the saved users, and create a table row for each user
+	for (var i=0; i< existingUsers.length; i++){
+		// existingUsers[i] represents the user object at index i of the existingUsers array
+		createRowInHtml(existingUsers[i]);
+	}
+}
+```
+If you're unsure of what the existingUsers[i] bit means, check out [this link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). createRowInHtml is a function that takes in a user object as a parameter, and creates a row in html displaying the user object. The function will require us to access the table, and the easiest way to access an element in JavaScript is by its unique id in the html document. Add an id to your table by making the following modification to your <table> tag in your html file:
+```html
+<table id="usertable">
+```
+Now, we will write the createRowInHtml function. Before commencing, there are some JavaScript methods we highly recommend you read about and understand first:
+
+- [createElement](http://www.w3schools.com/jsref/met_document_createelement.asp)
+- [innerHTML](http://www.w3schools.com/jsref/prop_html_innerhtml.asp)
+- [appendChild](http://www.w3schools.com/jsref/met_node_appendchild.asp)
+
+Add the following function to the bottom of your index.js file, after the `document.addEventListener("DOMContentLoaded", function(){ ... });` part:
+```javascript
+function createRowInHtml(user){
+	// Create a row element
+	var userRow = document.createElement("tr");
+
+	// Create a column element for the user's name
+  var nameColumn = document.createElement("td");
+	// Insert the user's name between the opening and closing td tags, e.g. <td>John Smith</td>
+  nameColumn.innerHTML = user.name;
+
+	// Create a column element for the user's email
+  var emailColumn = document.createElement("td");
+	// Insert the user's email between the opening and closing td tags e.g. <td>jsmith@gmail.com</td>
+  emailColumn.innerHTML = user.email;
+
+	// Add the name column and email column elements as children of the user row element
+  userRow.appendChild(nameColumn);
+  userRow.appendChild(emailColumn);
+
+	// Create a variable that contains our table element. Be warned: the id is case sensitive!
+  var userTable = document.getElementById("usertable");
+	// Add the user row as a child of the table element
+  userTable.appendChild(userRow);
+};
+```
+Run your index.html in a browser. Enter a name and email, hit submit, then refresh the page. You should see your entered user being displayed in the table. Want your table to look nicer? Let's add some Bootstrap classes to our table. Modify your <table> tag to look like this:
+```html
+<table class="table table-striped" id="usertable"></table>
+```
+Run index.html in a browser again and your table should now look something like this:
+
+- TODO: insert img of bootstrapped table
+
 
 ### 7. jQuery plugins
 
