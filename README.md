@@ -23,16 +23,19 @@ We will go through the various tools that will help you through Assignment 3. Th
 			- [Adding packages to Atom](#adding-packages-to-atom)
 			- [Other text editors worth mentioning](#other-text-editors-worth-mentioning)
 		- [2. HTML, CSS and JavaScript](#2-html-css-and-javascript)
-			- [Basics and overview](#basics-and-overview)
-			- [Referencing CSS and JavaScript files](#referencing-css-and-javascript-files)
+			- [HTML](#html)
+			- [CSS](#css)
+			- [JavaScript](#javascript)
 			- [Additional resources](#additional-resources)
-		- [3. Bootstrap](#3-bootstrap)
+			- [Overview](#overview)
+		- [3. Colour schemes](#3-colour-schemes)
+			- [Adobe Color CC](#adobe-color-cc)
+			- [Paletton](#paletton)
+		- [4. Bootstrap](#4-bootstrap)
 			- [Adding Bootstrap to your project](#adding-bootstrap-to-your-project)
 			- [Using Bootstrap in your webpages](#using-bootstrap-in-your-webpages)
 			- [Customizing Bootstrap styles](#customizing-bootstrap-styles)
-		- [4. Colour schemes](#4-colour-schemes)
-			- [Adobe Color CC](#adobe-color-cc)
-			- [Paletton](#paletton)
+			- [Using Bootstrap icons](#using-bootstrap-icons)
 		- [5. Working with forms](#5-working-with-forms)
 			- [Form appearance](#form-appearance)
 			- [Handling form behaviour](#handling-form-behaviour)
@@ -40,6 +43,7 @@ We will go through the various tools that will help you through Assignment 3. Th
 		- [6. Storing data](#6-storing-data)
 			- [How to use localStorage](#how-to-use-localstorage)
 			- [Working with JSON objects in localStorage](#working-with-json-objects-in-localstorage)
+			- [Combining forms and localStorage](#combining-forms-and-localstorage)
 		- [7. jQuery plugins](#7-jquery-plugins)
 
 
@@ -610,7 +614,7 @@ if (localStorage.getItem('savedUsers') !== null){
 	}
 }
 ```
-If you're unsure of what the existingUsers[i] bit means, check out [this link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). createRowInHtml is a function that takes in a user object as a parameter, and creates a row in html displaying the user object. The function will require us to access the table, and the easiest way to access an element in JavaScript is by its unique id in the html document. Add an id to your table by making the following modification to your <table> tag in your html file:
+If you're unsure of what the existingUsers[i] bit means, check out [this link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array). createRowInHtml is a function that takes in a user object as a parameter, and creates a row in html displaying the user object. The function will require us to access the table, and the easiest way to access an element in JavaScript is by its unique id in the html document. Add an id to your table by making the following modification to your `<table>` tag in your html file:
 ```html
 <table id="usertable">
 ```
