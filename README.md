@@ -163,7 +163,7 @@ You may be wondering what to use to write all your code in. Well, it all starts 
 
 #### Adding a new or existing project
 
-To start a new project, go to *File > Open...*. Navigate to where you want your new project to be saved, then create a new folder. This new folder is where all your files for the project will be stored. Select your newly created folder, then hit ok.
+To start a new project in Windows, go to *File > Open Folder...* (go to *File > Open...* for Macs). Navigate to where you want your new project to be saved, then create a new folder. This new folder is where all your files for the project will be stored. Select your newly created folder, then hit ok.
 
 To add an existing project, do the same steps, except instead of creating a new folder you can just select your existing project folder.
 
