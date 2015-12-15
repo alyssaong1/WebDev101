@@ -208,7 +208,7 @@ When we make websites, we start with making the html file. Html defines the stru
 </body>
 </html>
 ```
-[Read this](http://www.w3schools.com/html/html_intro.asp) for a detailed explanation of the meanings of the above snippet of html, and all the tags mean. Then, open the html file in your browser. You do this by double clicking on the html file inside your actual folder in Windows Explorer for Windows users, or in Finder for Mac users. The other way (and also the recommended way!) is to add an Atom package that lets you run it in the browser - to do this, refer to the [instructions above](#adding-packages-to-atom) on how to add packages to Atom. Your website should look like this:
+[Read this](http://www.w3schools.com/html/html_intro.asp) for a detailed explanation of all the tags in the above snippet of html. Then, open the html file in your browser. You do this by double clicking on the html file inside your actual folder in Windows Explorer for Windows users, or in Finder for Mac users. The other way (and also the recommended way!) is to add an Atom package that lets you run it in the browser - to do this, refer to the [instructions above](#adding-packages-to-atom) on how to add packages to Atom. Your website should look like this:
 
 ![html-1](img/html-1.png)
 
@@ -265,7 +265,7 @@ td {
 	padding: 20px;
 }
 ```
-But... If you run your project you won't see the styles being applied, and that's because we haven't "linked" the html and css file yet. We need to add a reference to the css file in our html file. Copy and paste the following lines right under the title tags of your html file, like this:
+But... If you run your project you won't see the styles being applied, and that's because we haven't "linked" the html and css file yet. We need to add a reference to the css file in our html file. Copy and paste the reference right under the title tags of your html file, like this:
 ```html
 <title>My first webpage</title>
 <!-- Referencing CSS files -->
@@ -273,10 +273,10 @@ But... If you run your project you won't see the styles being applied, and that'
 ```
 Now run your index.html file in your browser. You should see the following:
 
-![html-3](img/html3.png)
+![html-3](img/html-3.png)
 
 We recommend you read up on how css can be used to style the following:
-- Fonts
+- Fonts:
 	- [Resource 1](http://sixrevisions.com/css/font-face-guide/)
 	- [Resource 2](http://bavotasan.com/2010/embedding-fonts-web-site-css-font-face/)
 - [Colours](http://www.w3schools.com/cssref/css_colors_legal.asp)
@@ -285,7 +285,7 @@ We recommend you read up on how css can be used to style the following:
 
 #### JavaScript
 
-Lastly, we need a way to describe the behaviour of our webpage. For instance, when the "submit" button of a form is clicked, the form data is captured and sent to a server. We use *JavaScript* to define the behaviour of our webpage. Like css, we usually write our JavaScript code in another js file separate from the html file. This way, our html file is much neater.
+Lastly, we need a way to describe the behaviour of our webpage. For instance, when the "submit" button of a form is clicked, the form data is captured and sent to a server. We use JavaScript to define the behaviour of our webpage. Like css, we usually write our JavaScript code in another js file separate from the html file. This way, our html file is much neater.
 
 Let's try creating a button in our html page, then applying JavaScript to the button to make something happen when the button is clicked. To add a button to our webpage, copy and paste the following line under the table:
 ```html
@@ -442,7 +442,7 @@ The styling is now unique to that button.
 
 #### Using Bootstrap icons
 
-In Bootstrap, icons are called **glyphicons**, or glyphs. You may have noticed when you added Bootstrap to your project, there was a folder called "fonts" that had glyphicon-halfling files. These are what Bootstrap uses to support icons in your website. Let's try adding some glyphs to our webpage. Go to your index.html file and add the following inside the <body> tag:
+In Bootstrap, icons are called **glyphicons**, or glyphs. You may have noticed when you added Bootstrap to your project, there was a folder called "fonts" that had glyphicon-halfling files. These are what Bootstrap uses to support icons in your website. Let's try adding some glyphs to our webpage. Go to your index.html file and add the following inside the body tag:
 ```html
 <p>Envelope icon: <span class="glyphicon glyphicon-envelope"></span></p>
 <p>Search icon: <span class="glyphicon glyphicon-search"></span></p>
