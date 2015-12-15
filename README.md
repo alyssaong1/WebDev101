@@ -189,23 +189,28 @@ Hit install and that's it! Now, if you right click any html file in the left pan
 
 ### 2. HTML, CSS and JavaScript
 
-- TODO: Add resources for core concepts on CSS and Javascript
+HTML, CSS and JavaScript are the essential coding languages needed to build web pages. As we go through the basic concepts, we will also build a simple website as part of the tutorial so be sure to have Atom (or your IDE of choice) open!
 
 #### HTML
 
 When we make websites, we start with making the html file. Html defines the structure and content of your webpage. The html language is made up of **html tags**, that look like this: `<tagname>content</tagname>`. Let's try writing some html. Add a new project in Atom as described in the instructions above, then right click the project folder in the left hand pane of Atom and click on *New File*. Name the file index.html - the naming here is very important. In a website, the index.html page represents the home page, or the first page the user will see upon entering your website. Copy and paste in the following lines into the html file:
-
-- todo: use proper html document structure
-
 ```html
-<!-- This tag defines large headers -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>My first webpage</title>
+</head>
+<body>
+<!-- This tag defines large headings -->
 <h1>Paragraph header</h1>
 <!-- This tag defines paragraphs -->
 <p>My first paragraph</p>
+</body>
+</html>
 ```
-Then, open the html file in your browser. You do this by double clicking on the html file inside your actual folder in Windows Explorer for Windows users, or in Finder for Mac users. The other way (and also the recommended way!) is to add an Atom package that lets you run it in the browser - to do this, refer to the [instructions above](#adding-packages-to-atom) on how to add packages to Atom. Your website should look like this:
+[Read this](http://www.w3schools.com/html/html_intro.asp) for a detailed explanation of the meanings of the above snippet of html, and all the tags mean. Then, open the html file in your browser. You do this by double clicking on the html file inside your actual folder in Windows Explorer for Windows users, or in Finder for Mac users. The other way (and also the recommended way!) is to add an Atom package that lets you run it in the browser - to do this, refer to the [instructions above](#adding-packages-to-atom) on how to add packages to Atom. Your website should look like this:
 
-- TODO: add img with basic html
+![html-1](img/html-1.png)
 
 The h1 tag represents a large header, and the p tag represents a paragraph of text. Let's try creating a table using html as another example. A table consists of a table header (a row with titles for each of the columns), and then there's the body of the table, which is made up of rows and columns that contain the content. Copy and paste this simple table right underneath the `<p>My first paragraph</p>` line in your html file:
 
@@ -229,7 +234,7 @@ The h1 tag represents a large header, and the p tag represents a paragraph of te
 ```
 Run the html file in your browser, and your table should look like this:
 
-- TODO: add img with table, insert links below
+![html-2](img/html-2.png)
 
 As you can see, the tr tag represents each row of the table, the th tag represents a table column title and the td tag represents the columns that contain content.
 
@@ -242,31 +247,33 @@ Some other commonly used html elements you should have a read up on are:
 
 After defining the structure of the page, we also need to customize the styling of the page elements, such as its colour, size, or font. It is possible to do this in the html file itself, but it can make it very messy. Hence, we use *css* to define the presentation and styling of our html document. We write our css code in another css file separate from the html file. Let's try applying css to our html document created in the section before. Right click on your project folder in Atom, click *New File*, and name it style.css. Copy and paste the following into your style.css file:
 ```css
+/* Make the header text orange and center the header */
 h1 {
-	color: orange; /* This makes the header text orange */
-	text-align:center; /* This centers the header */
+	color: orange;
+	text-align:center;
 }
 
 p {
-	font-family: "Times New Roman";
+	font-family: "Arial";
 	font-size: 20px;
 }
 ```
 Let's use css to style a table as another example. We'll increase the padding around each column, like this:
 ```css
+/* Select all the td (column) elements and space them out */
 td {
-	/* Select all the td (column) elements and space them out*/
 	padding: 20px;
 }
 ```
-But... If you run your project you won't see the styles being applied, and that's because we haven't "linked" the html and css file yet. We need to add a reference to the css file in our html file. Copy and paste the following lines into the <head> section of your html file:
+But... If you run your project you won't see the styles being applied, and that's because we haven't "linked" the html and css file yet. We need to add a reference to the css file in our html file. Copy and paste the following lines right under the title tags of your html file, like this:
 ```html
+<title>My first webpage</title>
 <!-- Referencing CSS files -->
-<link rel="stylesheet" type="text/css" href="mystyle.css"/>
+<link rel="stylesheet" type="text/css" href="style.css"/>
 ```
 Now run your index.html file in your browser. You should see the following:
 
-- TODO: insert img of post css, insert links below
+![html-3](img/html3.png)
 
 We recommend you read up on how css can be used to style the following:
 - Fonts
@@ -300,19 +307,20 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 });
 ```
-We need to wait for the DOM content to be fully loaded to ensure that our click event listener is only attached to the button **after** the entire html document is loaded. This is to prevent situations where the JavaScript might try to access the button before the button is even loaded on the html document. Similarly with our css file, we'll need to add a reference to the JavaScript file in the html file. Copy and paste the following lines into the <head> section of your html file:
+We need to wait for the DOM content to be fully loaded to ensure that our click event listener is only attached to the button **after** the entire html document is loaded. This is to prevent situations where the JavaScript might try to access the button before the button is even loaded on the html document. Similarly with our css file, we'll need to add a reference to the JavaScript file in the html file. Copy and paste the following lines into the <head> section of your html file, after the reference to your css file:
 ```html
+<link rel="stylesheet" type="text/css" href="style.css"/>
 <!-- Referencing js files -->
 <script src="index.js"></script>
 ```
-Note: if you put your css or js files in folders, you would need to reference it relatively. So for example if your index.js file were saved in a folder called "js", you'd need to reference it like this instead:
+NOTE: if you put your css or js files in folders, you would need to reference it relatively. So for example if your index.js file were saved in a folder called "js", you'd need to reference it like this instead:
 ```html
 <!-- Using relative link -->
 <script src="js/index.js"></script>
 ```
-Now, run the html file and then try and click the button. An alert like this should pop up:
+Now, run the html file and then try and click the button. An alert should pop up (there may be slight differences depending on the browser you are using):
 
-- TODO: insert img of alert
+![html-4](img/html-4.png)
 
 We recommend you read up on these core JavaScript concepts:
 - [Variables](http://www.w3schools.com/js/js_variables.asp)
@@ -346,11 +354,13 @@ Every website should have a colour scheme. Picking the colour scheme can be a bi
 
 [Try it out!](https://color.adobe.com) Adobe Color CC allows you to pick your colour scheme based on colour rules, like analogous, monochromatic and complementary. After you select a colour rule, try dragging the circles on the colour wheel around - the colour palette automatically readjusts itself according to the colour rule you selected.
 
+![adobecc](img/adobecc.png)
+
 #### Paletton
 
 [Try it out!](http://paletton.com) Paletton also lets you pick your colour scheme based on colour rules, but with more customization and control available. Hover over the various colours and shades in the square palette to view their hex codes.
 
-- TODO: insert annotated images of how to use paletton and adobe color cc
+![paletton](img/paletton.png)
 
 ### 4. Bootstrap
 
@@ -362,10 +372,11 @@ To add Bootstrap to your project, head over to their [homepage](http://getbootst
 
 ![bs-dl](img/bs-dl.png)
 
-After unzipping, copy the contents of the bootstrap folder and paste it into the root of your project folder. We then need to reference the relevant scripts within the head tags of our html file, like this:
+After unzipping, copy the contents of the bootstrap folder and paste it into the root of your project folder. We then need to reference the relevant scripts within the head tags of our html file:
 
 ```html
 <head>
+	<!-- Add these lines somewhere between the head tags -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="js/bootstrap.js"></script>
@@ -406,7 +417,7 @@ Go back to your code, and copy and paste the following snippet into the custom.c
 	color: #FFFFFF;
 }
 ```
-In this snippet of code we made the background color of the button purple, and the button font white. There's just one more thing we have to do, and that's referencing the css file in our html file. Go to the index.html file and add this line below the <head> tag:
+In this snippet of code we made the background color of the button purple, and the button font white. There's just one more thing we have to do, and that's referencing the css file in our html file. Go to the index.html file and add this line between the head tags:
 
 ```html
 <link rel="stylesheet" type="text/css" href="custom.css"/>
@@ -444,18 +455,18 @@ For a full list of glyphs you can use, refer to [this link](http://www.w3schools
 
 ### 5. Working with forms
 
-It is extremely common for websites to take in user input, such as filling in a feedback form, registering for an online account, or logging in. We generally use forms for this. Forms contain a whole bunch of controls that collect user input with a submit button at the end - you can read more about forms [here](http://www.w3schools.com/html/html_forms.asp). Let's use a feedback form as an example. We will first create a feedback form in html, then retrieve user input with  JavaScript upon clicking the submit button.
+It is extremely common for websites to take in user input, such as filling in a feedback form, registering for an online account, or logging in. We generally use forms for this. Forms contain a whole bunch of controls that collect user input with a submit button at the end - you can read more about forms [here](http://www.w3schools.com/html/html_forms.asp). Let's use a feedback form as an example. We will first create a feedback form in html, then retrieve user input with  JavaScript upon clicking the submit button. We assume that you have completed the html, css and javascript, as well as the Bootstrap tutorial above.
 
 #### Form appearance
 
-Bootstrap provides styling for forms, which we will use. For more detail on Bootstrap forms, check out [this link](http://www.w3schools.com/bootstrap/bootstrap_forms.asp). The next 3 chapters have more info on Bootstrap form inputs which are very handy when you try to customize your form. Go into your index.html page and copy paste the following lines of code in the <body> tag:
+Bootstrap provides styling for forms, which we will use. For more detail on Bootstrap forms, check out [this link](http://www.w3schools.com/bootstrap/bootstrap_forms.asp). The next 3 chapters have more info on Bootstrap form inputs which are very handy when you try to customize your form. Go into your index.html page and copy paste the following lines of code before the closing body tag `</body>`:
 ```html
 <!-- Feedback form-->
 <form role="form" name="userform" id="userform">
 	<!-- Name textbox -->
 	<div class="form-group">
 		<label for="name">Full Name:</label>
-		<input type="name" class="form-control" id="name">
+		<input type="text" class="form-control" id="name">
 	</div>
 	<!--Feedback textarea -->
 	<div class="form-group">
@@ -466,7 +477,11 @@ Bootstrap provides styling for forms, which we will use. For more detail on Boot
 	<button type="submit" class="btn btn-default">Submit</button>
 </form>
 ```
-To see what other form inputs Bootstrap has, check [this link](http://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp). Run the index.html in your browser and you should see a simple form consisting of 2 text inputs. Now, we need to handle the form's behaviour in our JavaScript code.
+To see what other form inputs Bootstrap has, check [this link](http://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp). The input type email means that the form will not submit until the input value looks like email format (e.g. myemail@blahblah.com). Run the index.html in your browser and you should see a simple form consisting of 2 text inputs.
+
+![form-1](img/form-1.png)
+
+Now, we need to handle the form's behaviour in our JavaScript code.
 
 #### Handling form behaviour
 
@@ -497,14 +512,16 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 });
 ```
-Run the html file in your browser, then go *right click > Inspect Element*. A pane should pop up - click on 'console' in the pane. When you write values into the form and submit it, you should see the newFeedback object being printed in your console. Expand the object and you can see the values you input into the form being saved into the newUser object.
+Run the html file in your browser, then go *right click > Inspect Element*. A pane should pop up - click on the 'console' tab in the pane. When you write values into the form and submit it, you should see the newUser object being printed in your console. Expand the object and you can see the values you input into the form being saved into the newUser object. Your console may look different depending on the browser you use:
+
+![form-2](img/form-2.png)
 
 #### Form input validation
 
 Form validation is basically making sure the user enters healthy inputs before submitting the form. For instance, making sure an entered name is at least 4 characters in length, or preventing the user from submitting blank feedback. We can add attributes to input elements for form validation. For instance, one would use the `required` attribute to denote that the input value cannot be left as blank, and the `minlength` attribute to denote that the input value must have a  minimum number of characters. Let's apply some validation to our existing form by making the following changes to your code:
 ```html
 <!-- Change the line with the name input to this -->
-<input type="name" minlength="4" class="form-control" id="name" required>
+<input type="text" minlength="4" class="form-control" id="name" required>
 <!-- Change the line with the email input to this -->
 <input type="email" class="form-control" id="email" required>
 ```
@@ -601,7 +618,7 @@ if (localStorage.getItem('savedUsers') === null){
 
 The above code snippet handles the storing of our users after form submission. Now, we need to display the updated list of users onto the webpage in a table. The number of table rows is dependent on the number of users that are saved, and so we cannot write code for the table directly in the html. Fortunately, we can create html elements using javascript, and then add these into our html document using javascript as well.
 
-Let's start off with retrieving the updated list from localStorage when our html document finishes loading. Go to your index.js file, and copy and paste the following right after the document.addEventListener... line at the start:
+Let's start off with retrieving the updated list from localStorage when our html document finishes loading. Go to your index.js file, and copy and paste the following right after the document.addEventListener... line, but before you create the variable containing your user form:
 ```javascript
 // After html document has finished loading, check if there exists any saved users
 if (localStorage.getItem('savedUsers') !== null){
@@ -650,14 +667,9 @@ function createRowInHtml(user){
   userTable.appendChild(userRow);
 };
 ```
-Run your index.html in a browser. Enter a name and email, hit submit, then refresh the page. You should see your entered user being displayed in the table. Want your table to look nicer? Let's add some Bootstrap classes to our table. Modify your <table> tag to look like this:
-```html
-<table class="table table-striped" id="usertable"></table>
-```
-Run index.html in a browser again and your table should now look something like this:
+Run your index.html in a browser. Enter a name and email, hit submit, then **refresh the page**. You should see your entered user being displayed in the table, like this:
 
-- TODO: insert img of bootstrapped table
-
+![storage-1](img/storage-1.png)
 
 ### 7. jQuery plugins
 
