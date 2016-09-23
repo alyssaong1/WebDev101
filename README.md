@@ -1,10 +1,10 @@
-# Compsci 345 A3 Documentation
+# Beginner Web Development Tools Documentation
 
-We will go through the various tools that will help you through Assignment 3. These tools act as a guideline - you need not follow it exactly, but it is what we recommend you use as best practice for your assignment.
+We will go through various web development tools (originally created for the Compsci 345 Course). These tools act as a guideline - you need not follow it exactly, but it is what we recommend you use as best practice.
 
 ## Table of contents
 
-- [Compsci 345 A3 Documentation](#compsci-345-a3-documentation)
+- [Web Development Tools](#beginner-web-development-tools-documentation)
 	- [Table of contents](#table-of-contents)
 	- [Digital Wireframing](#digital-wireframing)
 		- [1. Pencil Project (recommended!)](#1-pencil-project-recommended)
